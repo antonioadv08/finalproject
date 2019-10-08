@@ -14,7 +14,7 @@ export default class ProductTable extends Component {
                             <th >Name</th>
                             <th >Price</th>
                         </tr>
-                        {this.props.products.map(product => <ProductRow {...product} />)}
+                        {this.props.name.map(product => <ProductRow {...product} />)}
                     </tbody>
                 </table>
 

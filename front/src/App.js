@@ -51,6 +51,8 @@ class App extends Component {
         });
       });
   }
+  
+
 
   render() {
     //aqui hacemos rendering condicional dependiendo de si tenemos un usuario logeado o no
@@ -58,7 +60,7 @@ class App extends Component {
       //en este caso mostramos los contenidos ya que hay usuario
       return (
         <React.Fragment>
-          <Redirect to="/home" />
+          <Redirect to="/" />
 
           <div className="App">
             <header className="App-header">
