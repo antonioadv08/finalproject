@@ -10,6 +10,7 @@ import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import Screener from "./components//contents/Screener";
+import Stockdetail from  "./components/contents/stockdetail"
 // import Tape from "./components/home/Tape";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
@@ -18,7 +19,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     //arrancamos el estado con un valor de loggedInUser con nada (luego lo vamos a reemplazar con el valor real)
-    this.state = { loggedInUser: null };
+    this.state = {
+      loggedInUser: null 
+    
+    };
     this.service = new AuthService();
 
     this.fetchUser()
@@ -64,10 +68,12 @@ class App extends Component {
 
           <div className="App">
             <header className="App-header">
-              {/* <Tape></Tape> */}
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
-              {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
-              {/* <Screener></Screener> */}
+              <Switch>
+               
+                <Route exact path="/Screener" render={() => <Screener getUser={this.getUser} />} />
+
+              </Switch>
             </header>
           </div>
         </React.Fragment>
@@ -87,6 +93,10 @@ class App extends Component {
                 <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
                 <Route exact path="/login" render={() => <Login getUser={this.getUser} />} />
                 <Route exact path="/Screener" render={() => <Screener getUser={this.getUser} />} />
+                <Route exact path="/stockdetail/:companyID" render={(props) => {
+                  return <Stockdetail companyID={props.match.params.companyID}  getUser={this.getUser} />}}
+                   />
+
 
               </Switch>
             </header>

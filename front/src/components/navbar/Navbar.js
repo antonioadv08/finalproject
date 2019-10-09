@@ -6,6 +6,7 @@ import AuthService from "../auth/AuthService";
 import logo from "../../logo-ironhack-blue.png";
 import "./Navbar.css"
 import Screener from "../contents/Screener";
+import Stockdetail from "../contents/stockdetail";
 
 class Navbar extends Component {
   constructor(props) {
@@ -34,14 +35,10 @@ class Navbar extends Component {
             </li>
             <li>
               <Link to="/screener">Screener</Link>
-              <Screener></Screener>
             </li>
           </ul>
 
-          <div className="header">
-            <img src={logo} alt="" height="100" />
-            <h2>Welcome {this.state.loggedInUser.username} - Ironhacker</h2>
-          </div>
+      
         </nav>
       );
     } else {
@@ -58,6 +55,7 @@ class Navbar extends Component {
               <li>
                 <Link to="/screener">Screener</Link>
               </li>
+             
 
             </ul>
           </nav>
