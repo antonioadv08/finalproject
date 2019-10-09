@@ -55,6 +55,9 @@ class Navbar extends Component {
               <li>
                 <Link to="/screener">Screener</Link>
               </li>
+              <li>
+                <Link to="/news">News</Link>
+              </li>
              
 
             </ul>

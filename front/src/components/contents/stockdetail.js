@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
-
+import News from "./news"
 
 export default class Stockdetail extends Component {
     constructor(props) {
@@ -15,11 +15,11 @@ export default class Stockdetail extends Component {
             .get(`https://financialmodellingprep.com/api/v3/historical-price-full/${companyID}`
             )
             .then(response => {
-              
 
-                    
 
-                this.setState({     
+
+
+                this.setState({
                     name: response.data.historical
                 });
 
@@ -32,12 +32,23 @@ export default class Stockdetail extends Component {
     }
 
     render() {
-        
+
         return (
             <div>
                 {this.props.companyID}
                 <div>
-                    {this.state.name.map(data => <p>{data.close}</p>)}
+
+                    <News></News>
+                    <table>
+                        <tr>
+                            <td>{this.state.name.map(data => <p>{data.open}</p>)}</td>
+                            <td>{this.state.name.map(data => <p>{data.close}</p>)}</td>
+                            <td>{this.state.name.map(data => <p>{data.high}</p>)}</td>
+                            <td>{this.state.name.map(data => <p>{data.low}</p>)}</td>
+                            <td>{this.state.name.map(data => <p>{data.date}</p>)}</td>
+                        </tr>
+                    </table>
+
                 </div>
             </div>
         )

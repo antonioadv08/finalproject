@@ -11,6 +11,8 @@ import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import Screener from "./components//contents/Screener";
 import Stockdetail from  "./components/contents/stockdetail"
+import News from  "./components/contents/news"
+
 // import Tape from "./components/home/Tape";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
@@ -64,7 +66,7 @@ class App extends Component {
       //en este caso mostramos los contenidos ya que hay usuario
       return (
         <React.Fragment>
-          <Redirect to="/" />
+          <Redirect  />
 
           <div className="App">
             <header className="App-header">
@@ -72,7 +74,9 @@ class App extends Component {
               <Switch>
                
                 <Route exact path="/Screener" render={() => <Screener getUser={this.getUser} />} />
-
+                <Route exact path="/stockdetail/:companyID" render={(props) => {
+                  return <Stockdetail companyID={props.match.params.companyID}  getUser={this.getUser} />}}
+                   />
               </Switch>
             </header>
           </div>
@@ -95,6 +99,9 @@ class App extends Component {
                 <Route exact path="/Screener" render={() => <Screener getUser={this.getUser} />} />
                 <Route exact path="/stockdetail/:companyID" render={(props) => {
                   return <Stockdetail companyID={props.match.params.companyID}  getUser={this.getUser} />}}
+                   />
+                    <Route exact path="/news" render={(props) => {
+                  return <News companyID={props.match.params.companyID}  getUser={this.getUser} />}}
                    />
 
 
