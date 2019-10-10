@@ -17,7 +17,7 @@ export default class Stockdetail extends Component {
             .then(response => {
                 
                 this.setState({
-                    name: response.data.AAPL
+                    name: response.data.AAPL[0]    
                 });
                 
 
@@ -31,10 +31,11 @@ export default class Stockdetail extends Component {
         });
     }
     render() {
-
+console.log(this.state.name)
         return (
             <div>
                 <div>
+                    {[this.state.name.data]}
                     <table>ssss
                         <tr>
                             <td>{this.state.name.map(data => <p>{data.AAPL}</p>)}</td>

@@ -12,6 +12,11 @@ import Contents from "./components/contents/Contents";
 import Screener from "./components//contents/Screener";
 import Stockdetail from  "./components/contents/stockdetail"
 import News from  "./components/contents/news"
+import Tv from "./components/contents/Tv"
+import Chart from "./components/contents/chart"
+
+
+
 
 // import Tape from "./components/home/Tape";
 
@@ -103,6 +108,8 @@ class App extends Component {
                     <Route exact path="/news" render={(props) => {
                   return <News companyID={props.match.params.companyID}  getUser={this.getUser} />}}
                    />
+                <Route exact path="/tv" render={() => <Tv getUser={this.getUser} />} />
+                <Route exact path="/chart" render={() => <Chart getUser={this.getUser} />} />
 
 
               </Switch>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import News from "./news"
+import Chart from "./chart"
+
 
 export default class Stockdetail extends Component {
     constructor(props) {
@@ -38,8 +40,8 @@ export default class Stockdetail extends Component {
                 {this.props.companyID}
                 <div>
 
-                    <News></News>
                     <table>
+                        <Chart ></Chart>
                         <tr>
                             <td>{this.state.name.map(data => <p>{data.open}</p>)}</td>
                             <td>{this.state.name.map(data => <p>{data.close}</p>)}</td>
