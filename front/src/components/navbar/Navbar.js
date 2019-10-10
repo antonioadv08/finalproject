@@ -3,10 +3,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import AuthService from "../auth/AuthService";
-import logo from "../../logo-ironhack-blue.png";
 import "./Navbar.css"
-import Screener from "../contents/Screener";
-import Stockdetail from "../contents/stockdetail";
 
 class Navbar extends Component {
   constructor(props) {

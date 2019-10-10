@@ -8,7 +8,6 @@ import Navbar from "./components/navbar/Navbar";
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
-import Contents from "./components/contents/Contents";
 import Screener from "./components//contents/Screener";
 import Stockdetail from  "./components/contents/stockdetail"
 import News from  "./components/contents/news"

@@ -20,7 +20,6 @@ export default class Stockdetail extends Component {
 
 
 
-
                 this.setState({
                     name: response.data.historical
                 });
@@ -34,21 +33,15 @@ export default class Stockdetail extends Component {
     }
 
     render() {
-
         return (
             <div>
                 {this.props.companyID}
                 <div>
 
                     <table>
-                        <Chart ></Chart>
-                        <tr>
-                            <td>{this.state.name.map(data => <p>{data.open}</p>)}</td>
-                            <td>{this.state.name.map(data => <p>{data.close}</p>)}</td>
-                            <td>{this.state.name.map(data => <p>{data.high}</p>)}</td>
-                            <td>{this.state.name.map(data => <p>{data.low}</p>)}</td>
-                            <td>{this.state.name.map(data => <p>{data.date}</p>)}</td>
-                        </tr>
+                        <Chart data={this.state.name}></Chart>
+
+                       
                     </table>
 
                 </div>
