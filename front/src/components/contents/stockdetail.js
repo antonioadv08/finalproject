@@ -35,11 +35,13 @@ export default class Stockdetail extends Component {
     render() {
         return (
             <div>
+                
                 {this.props.companyID}
                 <div>
 
                     <table>
                         <Chart data={this.state.name}></Chart>
+                        <News ></News>
 
                        
                     </table>

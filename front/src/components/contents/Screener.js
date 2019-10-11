@@ -22,7 +22,7 @@ export default class Screener extends Component {
             )
             .then(response => {
 
-      
+
                 this.setState({
                     search: word,
                     name: response.data.bestMatches
@@ -44,7 +44,7 @@ export default class Screener extends Component {
     };
 
     render() {
-   
+
 
         return (
 
@@ -70,6 +70,7 @@ export default class Screener extends Component {
                             return (
                                 <div>
                                     <Link to={`stockdetail/${el["1. symbol"]}`}>  <p>{el["2. name"]}</p></Link>
+
                                 </div>
                             );
                         })}</div> :

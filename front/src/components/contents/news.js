@@ -6,47 +6,41 @@ export default class Stockdetail extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: [],
+            news: []
         };
     }
 
-    getData = () => {
+    getData = (companyID) => {
         axios
-            .get(`https://api.unibit.ai/api/terminal?tickers=AAPL&selectedFields=Sentiment,Title,Author,description,Source,Source%20Url,Published%20Time&apiname=news_by_sentiment&startDate=7/24/2019&endDate=7/29/2019&accessKey=cP__FTGwQdTggfYA1nFQXN2aSZ2tHaJA`
+            .get(`https://api.unibit.ai/api/terminal?tickers=${companyID}&selectedFields=Sentiment,Title,Author,description,Source,Source%20Url,Published%20Time&apiname=news_by_sentiment&startDate=7/24/2019&endDate=7/29/2019&accessKey=cP__FTGwQdTggfYA1nFQXN2aSZ2tHaJA`
             )
             .then(response => {
-                
                 this.setState({
-                    name: response.data.AAPL[0]    
+                    news: response.data[companyID]
                 });
-                
+
 
 
             });
     };
 
     componentDidMount() {
-        this.getData();
-        this.setState({
-        });
+        // this.getData(this.props.companyID);
+        this.getData("AAPL");
     }
+
     render() {
-console.log(this.state.name)
+        console.log(this.state.news)
         return (
             <div>
-                <div>
-                    {[this.state.name.data]}
-                    <table>ssss
-                        <tr>
-                            <td>{this.state.name.map(data => <p>{data.AAPL}</p>)}</td>
-                            <td>{this.state.name.map(data => <p>{data.AAPL}</p>)}</td>
-                            <td>{this.state.name.map(data => <p>{data.AAPL}</p>)}</td>
-                            <td>{this.state.name.map(data => <p>{data.AAPL}</p>)}</td>
-                            <td>{this.state.name.map(data => <p>{data.AAPL}</p>)}</td>
-                        </tr>
-                    </table>
+                <table>
+                    <tr>
+                        <td>{this.state.news.map(data => <a href={data["source url"]} target="_blank" rel="noopener noreferrer"><p>{data.author}</p></a>)}</td>
+                        <td>{this.state.news.map(data => <p>{data.author}</p>)}</td>
 
-                </div>
+
+                    </tr>
+                </table>
             </div>
         )
     }

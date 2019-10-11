@@ -104,11 +104,11 @@ class App extends Component {
                 <Route exact path="/stockdetail/:companyID" render={(props) => {
                   return <Stockdetail companyID={props.match.params.companyID}  getUser={this.getUser} />}}
                    />
-                    <Route exact path="/news" render={(props) => {
-                  return <News companyID={props.match.params.companyID}  getUser={this.getUser} />}}
-                   />
+
                 <Route exact path="/tv" render={() => <Tv getUser={this.getUser} />} />
                 <Route exact path="/chart" render={() => <Chart getUser={this.getUser} />} />
+                <Route exact path="/news" render={() => <News getUser={this.getUser} />} />
+
 
 
               </Switch>

@@ -55,12 +55,10 @@ class Navbar extends Component {
               <li>
                 <Link to="/news">News</Link>
               </li>
+            
               <li>
-                <Link to="/chart">Chart</Link>
-              </li>
-              {/* <li>
                 <Link to="/tv">Tv</Link>
-              </li> */}
+              </li>
              
 
             </ul>
