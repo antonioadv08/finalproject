@@ -13,6 +13,12 @@ import Stockdetail from  "./components/contents/stockdetail"
 import News from  "./components/contents/news"
 import Tv from "./components/contents/Tv"
 import Chart from "./components/contents/chart"
+import Home from "./components/contents/home"
+import MostGainers from "./components/contents/mostGainers";
+import MostLosers from "./components/contents/mostLosers";
+import MostActive from "./components/contents/mostActive";
+import SectorsPerfomance from "./components/contents/sectorsPerfomance";
+
 
 
 
@@ -90,7 +96,7 @@ class App extends Component {
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
         <React.Fragment>
-          <Redirect to="/login" />
+          <Redirect  />
 
           <div className="App">
             <header className="App-header">
@@ -108,6 +114,11 @@ class App extends Component {
                 <Route exact path="/tv" render={() => <Tv getUser={this.getUser} />} />
                 <Route exact path="/chart" render={() => <Chart getUser={this.getUser} />} />
                 <Route exact path="/news" render={() => <News getUser={this.getUser} />} />
+                <Route exact path="/home" render={() => <Home getUser={this.getUser} />} />
+                <Route exact path="/mostGainers" render={() => <MostGainers getUser={this.getUser} />} />
+                <Route exact path="/mostLosers" render={() => <MostLosers getUser={this.getUser} />} />
+                <Route exact path="/mostActive" render={() => <MostActive getUser={this.getUser} />} />
+                <Route exact path="/sectorsPerfomance" render={() => <SectorsPerfomance getUser={this.getUser} />} />
 
 
 

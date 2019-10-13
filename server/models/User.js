@@ -3,7 +3,9 @@ const Schema   = mongoose.Schema;
 
 const userSchema = new Schema({
   username: String,
-  password: String
+  password: String,
+  stocks: [{type: Schema.Types.ObjectId, ref:'Stock'}]
+
 }, {
   timestamps: {
     createdAt: 'created_at',
@@ -13,3 +15,7 @@ const userSchema = new Schema({
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
+
+
+
+

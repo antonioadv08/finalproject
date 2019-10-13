@@ -30,13 +30,13 @@ export default class Stockdetail extends Component {
     }
 
     render() {
-        console.log(this.state.news)
+        console.log(this.props.data)
         return (
             <div>
                 <table>
                     <tr>
                         <td>{this.state.news.map(data => <a href={data["source url"]} target="_blank" rel="noopener noreferrer"><p>{data.author}</p></a>)}</td>
-                        <td>{this.state.news.map(data => <p>{data.author}</p>)}</td>
+                        <td>{this.state.news.map(data => <p>{data.description}</p>)}</td>
 
 
                     </tr>

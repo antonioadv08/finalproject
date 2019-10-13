@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios";
 import News from "./news"
 import Chart from "./chart"
+import "./_stockdetail.css"
 
 
 export default class Stockdetail extends Component {
@@ -33,18 +34,18 @@ export default class Stockdetail extends Component {
     }
 
     render() {
+        console.log(this.state.name)
+
         return (
             <div>
                 
                 {this.props.companyID}
-                <div>
+                <div class="distribution">
 
-                    <table>
                         <Chart data={this.state.name}></Chart>
-                        <News ></News>
+                        <News data={this.state.name}></News>
 
                        
-                    </table>
 
                 </div>
             </div>

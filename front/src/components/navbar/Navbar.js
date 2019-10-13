@@ -43,15 +43,16 @@ class Navbar extends Component {
         <div>
           <nav className="nav-style">
             <ul>
+            <li>
+                <Link to="/home">Home</Link>
+              </li>
               <li>
                 <Link to="/signup">Signup</Link>
               </li>
               <li>
                 <Link to="/login">Login</Link>
               </li>
-              <li>
-                <Link to="/screener">Screener</Link>
-              </li>
+             
               <li>
                 <Link to="/news">News</Link>
               </li>
@@ -59,8 +60,18 @@ class Navbar extends Component {
               <li>
                 <Link to="/tv">Tv</Link>
               </li>
-             
-
+              <li>
+                <Link to="/mostGainers">Mostgainers</Link>
+              </li>
+              <li>
+                <Link to="/mostLosers">Mostlosers</Link>
+              </li>
+              <li>
+                <Link to="/mostActive">Mostactive</Link>
+              </li>
+              <li>
+                <Link to="/sectorsPerfomance">Sectorperfomance</Link>
+              </li>
             </ul>
           </nav>
         </div>
