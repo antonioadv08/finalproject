@@ -30,7 +30,6 @@ export default class Stockdetail extends Component {
     }
 
     render() {
-        console.log(this.props.data)
         return (
             <div>
                 <table>

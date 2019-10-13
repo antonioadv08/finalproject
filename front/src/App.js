@@ -18,6 +18,7 @@ import MostGainers from "./components/contents/mostGainers";
 import MostLosers from "./components/contents/mostLosers";
 import MostActive from "./components/contents/mostActive";
 import SectorsPerfomance from "./components/contents/sectorsPerfomance";
+import StockNumbers from "./components/contents/stockNumbers";
 
 
 
@@ -119,6 +120,7 @@ class App extends Component {
                 <Route exact path="/mostLosers" render={() => <MostLosers getUser={this.getUser} />} />
                 <Route exact path="/mostActive" render={() => <MostActive getUser={this.getUser} />} />
                 <Route exact path="/sectorsPerfomance" render={() => <SectorsPerfomance getUser={this.getUser} />} />
+                <Route exact path="/stockNumbers" render={() => <StockNumbers getUser={this.getUser} />} />
 
 
 
