@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import ReactApexChart from "react-apexcharts";
 
 
 export default class SectorsPerfomance extends Component {

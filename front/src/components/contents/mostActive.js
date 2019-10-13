@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import axios from "axios";
+import "./_mostActive.css"
 
 
 export default class MostActive extends Component {
@@ -32,9 +33,14 @@ export default class MostActive extends Component {
     render() {
         return (
             <div>
-                <table>
                 <h3>Most active</h3>
 
+                <table class="mostactivetable">
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Company name</th>
+                        <th>Price change</th>
+                    </tr>
                     <tr>
                         <td>{this.state.name.map(data => <p>{data.ticker}</p>)}</td>
                         <td>{this.state.name.map(data => <p>{data.companyName}</p>)}</td>

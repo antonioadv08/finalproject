@@ -24,8 +24,7 @@ class App extends Component {
             series: [{
                 data: [{
 
-                    //   x: "2014-2-5",
-                    //   y: [6629.81, 6650.5, 6623.04, 6633.33]
+                 
                 },
 
                 ]
@@ -49,7 +48,7 @@ class App extends Component {
         return (
 
             <div id="chart">
-                <ReactApexChart options={this.state.options} series={newDataSeries} type="candlestick" width="1000" height="800" />
+                <ReactApexChart options={this.state.options} series={newDataSeries} type="candlestick" width="800" height="600" />
             </div>
 
         );

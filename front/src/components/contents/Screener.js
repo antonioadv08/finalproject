@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import axios from "axios";
-
+import "./_screener.css"
 import { Link } from "react-router-dom";
 
 
@@ -60,7 +60,8 @@ export default class Screener extends Component {
                                 id="search"
                                 value={this.state.search}
                                 onChange={this.handleSearch}
-                            />
+                               size="50"   
+                                />
 
                         </div>
 

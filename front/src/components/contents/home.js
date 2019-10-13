@@ -5,6 +5,7 @@ import MostGainers from './mostGainers';
 import MostLosers from './mostLosers';
 import MostActive from './mostActive';
 import SectorsPerfomance from './sectorsPerfomance';
+import "./_home.css"
 
 export default class home extends Component {
 
@@ -13,9 +14,13 @@ export default class home extends Component {
         return (
             <div>
                 <Screener></Screener>
+
+                <div class="stockspanel">
                 <MostGainers></MostGainers>
                 <MostLosers></MostLosers>
                 <MostActive></MostActive>
+                </div>
+                
                 <SectorsPerfomance></SectorsPerfomance>
 
             </div>

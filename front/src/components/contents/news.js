@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import "./_news.css"
 
 
 export default class Stockdetail extends Component {
@@ -30,16 +31,16 @@ export default class Stockdetail extends Component {
     }
 
     render() {
+        console.log(this.state.news)
         return (
             <div>
-                <table>
+                <table calss="newstable" >
                     <tr>
-                        <td>{this.state.news.map(data => <a href={data["source url"]} target="_blank" rel="noopener noreferrer"><p>{data.author}</p></a>)}</td>
-                        <td>{this.state.news.map(data => <p>{data.description}</p>)}</td>
+                        <td>{this.state.news.map(data => <a href={data["source url"]} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>
+                        <td> {this.state.news.map(data => <p>{data.description}</p>)}</td>
 
-
-                    </tr>
-                </table>
+                        </tr>
+                        </table>
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import "./_mostGainers.css"
 
 
 export default class MostGainers extends Component {
@@ -31,8 +32,13 @@ export default class MostGainers extends Component {
     render() {
         return (
             <div>
-                <table>
-                    <h3>Most gainers</h3>
+                <h3 class="mostGainertable"> Most gainers</h3>
+                <table class="mostgainerstable">
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Company name</th>
+                        <th>Price change</th>
+                    </tr>
                     <tr>
                         <td>{this.state.name.map(data => <p>{data.ticker}</p>)}</td>
                         <td>{this.state.name.map(data => <p>{data.companyName}</p>)}</td>
