@@ -24,7 +24,6 @@ const login = (req, user) => {
 
 // SIGNUP
 router.post('/signup', (req, res, next) => {
-
   const {username, password} = req.body;
 
   console.log('username', username)
@@ -54,6 +53,7 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
+
   passport.authenticate('local', (err, theUser, failureDetails) => {
     
     // Check for errors

@@ -4,7 +4,8 @@ import axios from 'axios';
 class AuthService {
   constructor() {
     this.service = axios.create({
-      baseURL: `${process.env.REACT_APP_URL}/api/auth`,
+      baseURL: `https://stockiron.herokuapp.com/api/auth`,
+      // baseURL:"http://localhost:3010/api/auth",
       withCredentials: true
     });
   }
