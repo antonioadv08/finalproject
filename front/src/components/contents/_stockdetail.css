@@ -10,7 +10,12 @@
 table, th, td,tr {
     border: 1px solid black;
   }
+.arriba{
+    display:flex;
+}
 
-
+.abajo{
+    display:flex;
+}
 
 

@@ -114,34 +114,33 @@ export default class Stockdetail extends Component {
 
                     <Chart data={this.state.name}></Chart>
                     {/* <News data={this.state.name}></News> */}
-                    <div>
-                        <table  >
-                            <tr>
-                                <th>title</th>
-                                <th>description</th>
-                            </tr>
+
+                </div>
+                <div>
+                    <table  >
+                        <tr>
+                            <th>title</th>
+                            <th>description</th>
+                        </tr>
 
 
-                            <tr >
-                                <td class="arriba">{this.state.news.map(data => <a href={data["source url"]} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>
-                                <td class="abajo"> {this.state.news.map(data => <p>{data.description}</p>)}</td>
+                        <tr >
+                            <td class="arriba">{this.state.news.map(data => <a href={data["source url"]} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>
+                            <td class="abajo"> {this.state.news.map(data => <p>{data.description}</p>)}</td>
 
 
-                                {/* <td>{this.state.news.map(data => <a href={data.url} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>
+                            {/* <td>{this.state.news.map(data => <a href={data.url} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>
                                 <td> {this.state.news.map(data => <p>{data.description}</p>)}</td>
                                 <td> {this.state.news.map(data => <p>{data.urlToImage}</p>)}</td> */}
 
-                            </tr>
+                        </tr>
 
 
 
-                        </table>
-
-                    </div>
-
-
+                    </table>
 
                 </div>
+
             </div>
         )
     }

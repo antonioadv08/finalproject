@@ -1,4 +1,11 @@
 .stockspanel{
 
 display:flex;
+margin-bottom: 80px;
+}
+
+.stockspaneldown{
+    display:flex;
+    align-content: space-between;
+    
 }
