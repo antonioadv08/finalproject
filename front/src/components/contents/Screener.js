@@ -18,7 +18,7 @@ export default class Screener extends Component {
 
     getData = (word) => {
         axios
-            .get(`https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${word}&apikey=247QRNTD6G5X6Q7Q`
+            .get(`https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${word}&apikey=${process.env.REACT_APP_SCREENER_KEY}`
             )
             .then(response => {
 

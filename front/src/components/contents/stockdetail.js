@@ -5,6 +5,7 @@ import Chart from "./chart"
 import "./_stockdetail.css"
 
 
+
 export default class Stockdetail extends Component {
     constructor(props) {
         super(props)
@@ -48,7 +49,7 @@ export default class Stockdetail extends Component {
 
     getNews = (companyID) => {
         axios
-            .get(`https://api.unibit.ai/api/terminal?tickers=${companyID}&selectedFields=Sentiment,Title,Author,description,Source,Source%20Url,Published%20Time&apiname=news_by_sentiment&startDate=7/24/2019&endDate=7/29/2019&accessKey=cP__FTGwQdTggfYA1nFQXN2aSZ2tHaJA`
+            .get(`https://api.unibit.ai/api/terminal?tickers=${companyID}&selectedFields=Sentiment,Title,Author,description,Source,Source%20Url,Published%20Time&apiname=news_by_sentiment&startDate=7/24/2019&endDate=7/29/2019&accessKey=${process.env.REACT_APP_UNIBIT_KEY}`
             )
             .then(response => {
 
@@ -65,7 +66,7 @@ export default class Stockdetail extends Component {
     // getNews = (companyID) => {
 
     //     axios
-    //     .get(`https://newsapi.org/v2/everything?language=en&q=${companyID}&from=2019-09-14&sortBy=publishedAt&apiKey=c2734b6153b349f2af850def3150b604`)
+    //     .get(`https://newsapi.org/v2/everything?language=en&q=${companyID}&from=2019-09-14&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWSAPI_KEY}`)
 
     //         .then(response => {
     //             console.log(response.data.articles)

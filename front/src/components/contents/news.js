@@ -13,7 +13,7 @@ export default class Stockdetail extends Component {
 
     getData = (companyID) => {
         axios
-            .get(`https://api.unibit.ai/api/terminal?tickers=${companyID}&selectedFields=Sentiment,Title,Author,description,Source,Source%20Url,Published%20Time&apiname=news_by_sentiment&startDate=7/24/2019&endDate=7/29/2019&accessKey=cP__FTGwQdTggfYA1nFQXN2aSZ2tHaJA`
+            .get(`https://api.unibit.ai/api/terminal?tickers=${companyID}&selectedFields=Sentiment,Title,Author,description,Source,Source%20Url,Published%20Time&apiname=news_by_sentiment&startDate=7/24/2019&endDate=7/29/2019&accessKey=${process.env.REACT_APP_UNIBIT_KEY}`
             )
             .then(response => {
                 this.setState({
