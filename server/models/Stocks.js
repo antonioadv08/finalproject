@@ -8,6 +8,7 @@ const stockSchema = new Schema({
     url: String,
     originalname: String
   },
+  stockTicker:String,
   stockName: String,
   author: String,
   content: String,

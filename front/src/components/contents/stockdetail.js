@@ -10,7 +10,9 @@ export default class Stockdetail extends Component {
         super(props)
         this.state = {
             name: [],
-            profile: []
+            profile: [],
+            news: [],
+
         };
     }
 
@@ -20,7 +22,6 @@ export default class Stockdetail extends Component {
             )
 
             .then(response => {
-                console.log(response.data.historical)
 
 
                 this.setState({
@@ -38,7 +39,6 @@ export default class Stockdetail extends Component {
 
 
             .then(response => {
-                console.log(response.data)
 
                 this.setState({
                     profile: response.data.profile
@@ -46,14 +46,49 @@ export default class Stockdetail extends Component {
             });
     };
 
+    getNews = (companyID) => {
+        axios
+            .get(`https://api.unibit.ai/api/terminal?tickers=${companyID}&selectedFields=Sentiment,Title,Author,description,Source,Source%20Url,Published%20Time&apiname=news_by_sentiment&startDate=7/24/2019&endDate=7/29/2019&accessKey=cP__FTGwQdTggfYA1nFQXN2aSZ2tHaJA`
+            )
+            .then(response => {
+
+                this.setState({
+                    news: response.data[companyID]
+                });
+
+
+
+            });
+    };
+
+
+    // getNews = (companyID) => {
+
+    //     axios
+    //     .get(`https://newsapi.org/v2/everything?language=en&q=${companyID}&from=2019-09-14&sortBy=publishedAt&apiKey=c2734b6153b349f2af850def3150b604`)
+
+    //         .then(response => {
+    //             console.log(response.data.articles)
+
+    //             this.setState({
+    //                 news: response.data.articles
+    //             });
+
+
+
+    //         });
+    // };
+
+
+
     componentDidMount() {
         this.getData(this.props.companyID);
         this.getProfile(this.props.companyID);
+        this.getNews(this.props.companyID);
 
     }
 
     render() {
-        console.log(this.state.profile)
 
         return (
 
@@ -77,7 +112,31 @@ export default class Stockdetail extends Component {
                     </div>
 
                     <Chart data={this.state.name}></Chart>
-                    <News data={this.state.name}></News>
+                    {/* <News data={this.state.name}></News> */}
+                    <div>
+                        <table  >
+                            <tr>
+                                <th>title</th>
+                                <th>description</th>
+                            </tr>
+
+
+                            <tr >
+                                <td class="arriba">{this.state.news.map(data => <a href={data["source url"]} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>
+                                <td class="abajo"> {this.state.news.map(data => <p>{data.description}</p>)}</td>
+
+
+                                {/* <td>{this.state.news.map(data => <a href={data.url} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>
+                                <td> {this.state.news.map(data => <p>{data.description}</p>)}</td>
+                                <td> {this.state.news.map(data => <p>{data.urlToImage}</p>)}</td> */}
+
+                            </tr>
+
+
+
+                        </table>
+
+                    </div>
 
 
 

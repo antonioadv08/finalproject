@@ -40,10 +40,7 @@ export default class SectorsPerfomance extends Component {
                         <td>{this.state.name.map(data => <p>{data.changesPercentage}</p>)}</td>
                     </tr>
                 </table>
-
-
-
-
+                
             </div>
         )
     }

@@ -75,6 +75,10 @@ class Navbar extends Component {
               <li>
                 <Link to="/stocksNumbers">Stocknumbers</Link>
               </li>
+              <li>
+                <Link to="/createRecomendation">Create recomendation</Link>
+              </li>
+
 
 
             </ul>

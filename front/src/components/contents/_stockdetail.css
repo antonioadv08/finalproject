@@ -2,3 +2,15 @@
     display:flex;
     background-color: rgba(108, 255, 71, 0.8)
 }
+
+.datanews{
+    font-size: 15px;
+}
+
+table, th, td,tr {
+    border: 1px solid black;
+  }
+
+
+
+

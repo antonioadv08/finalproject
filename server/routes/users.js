@@ -11,49 +11,44 @@ const access = require("./../middlewares/access.mid");
 
 
 
-router.get('/profile', (req, res) => {
-  User.findById(req.user._id)
-    .populate("stocks")
-    .then(user => {
-      user.stocks.reverse()
-      res.render('profile-detail', { user })
+// router.get('/profile', (req, res) => {
+//   User.findById(req.user._id)
+//     .populate("stocks")
+//     .then(user => {
+//       user.stocks.reverse()
+//       res.render('profile-detail', { user })
 
-    })
+//     })
 
-})
-
-
+// })
 
 
-router.get('/resena', access.checkLogin, (req, res) => {
-
-  const user = req.user;
-
-  res.render('resena', { user })
-
-})
 
 
-router.post("/resena", upload.single("picName"), access.checkLogin, (req, res, next) => {
-  const { title, author, pages, publisher_date, content } = req.body;
-  const cover = req.file.url.toString();
-  const categories = {name: req.body.categories}
-  const newBook = new Book({
+// router.get('/resena', access.checkLogin, (req, res) => {
+
+//   const user = req.user;
+
+//   res.render('resena', { user })
+
+// })
+
+
+router.post("/stockadvice", upload.single("picName"), access.checkLogin, (req, res, next) => {
+  const { ticker,nameCompany,recomendation } = req.body;
+  const charturl = req.file.url.toString();
+  const newStock = new Stock({
     creatorId: req.user._id,
-    title,
-    author,
-    pages,
-    publisher_date,
-    categories,
-    content,
-    cover,
-
+    ticker,
+    nameCompany,
+    recomendation,
+    charturl,
   });
 
-  newBook.save()
+  newStock.save()
 
-    .then((book) => {
-      User.findByIdAndUpdate(req.user._id, { $push: { books: book._id } }, { new: true })
+    .then((stock) => {
+      User.findByIdAndUpdate(req.user._id, { $push: { stocks: stock._id } }, { new: true })
         .then((user) => {
           res.redirect("/")
 
