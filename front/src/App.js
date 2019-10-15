@@ -22,7 +22,7 @@ import StockNumbers from "./components/contents/stockNumbers";
 import CreateRecomendation from "./components/contents/createRecomendation";
 import Followbutton from "./components/contents/followbutton";
 import Watchlist from "./components/contents/watchlist";
-import Tickertape from "./components/tickertape";
+import Tickertape from "./components/contents/tickertape";
 import Economiccalendar from "./components/contents/economiccalendar";
 
 

@@ -7,7 +7,7 @@ import MostActive from './mostActive';
 import SectorsPerfomance from './sectorsPerfomance';
 import "./_home.css"
 import Tv from './Tv';
-import Tickertape from '../tickertape';
+import Tickertape from './tickertape';
 import Economiccalendar from './economiccalendar';
 
 export default class home extends Component {
