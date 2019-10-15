@@ -4,7 +4,7 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
   username: String,
   password: String,
-  stocksCreated: [{type: Schema.Types.ObjectId, ref:'Stock'}],
+  stocksFollow: [{type: Schema.Types.ObjectId, ref:'Stock'}],
 
 }, {
   timestamps: {

@@ -78,8 +78,12 @@ class Navbar extends Component {
               <li>
                 <Link to="/createRecomendation">Create recomendation</Link>
               </li>
-
-
+              <li>
+                <Link to="/watchlist">watchlist</Link>
+              </li>
+              <li>
+                <Link to="/tickertape">tickertape</Link>
+              </li>
 
             </ul>
           </nav>

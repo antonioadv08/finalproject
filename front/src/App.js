@@ -20,6 +20,9 @@ import MostActive from "./components/contents/mostActive";
 import SectorsPerfomance from "./components/contents/sectorsPerfomance";
 import StockNumbers from "./components/contents/stockNumbers";
 import CreateRecomendation from "./components/contents/createRecomendation";
+import Followbutton from "./components/contents/followbutton";
+import Watchlist from "./components/contents/watchlist";
+import Tickertape from "./components/tickertape";
 
 
 
@@ -82,6 +85,7 @@ class App extends Component {
 
           <div className="App">
             <header className="App-header">
+              <Tickertape></Tickertape>
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
               <Switch>
                
@@ -102,7 +106,7 @@ class App extends Component {
 
           <div className="App">
             <header className="App-header">
-            {/* <Tape></Tape> */}
+            <Tickertape></Tickertape>
 
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
               <Switch>
@@ -123,6 +127,9 @@ class App extends Component {
                 <Route exact path="/sectorsPerfomance" render={() => <SectorsPerfomance getUser={this.getUser} />} />
                 <Route exact path="/stockNumbers" render={() => <StockNumbers getUser={this.getUser} />} />
                 <Route exact path="/createRecomendation" render={() => <CreateRecomendation getUser={this.getUser} />} />
+                <Route exact path="/followbutton" render={() => <Followbutton getUser={this.getUser} />} />
+                <Route exact path="/watchlist" render={() => <Watchlist getUser={this.getUser} />} />
+                <Route exact path="/tickertape" render={() => <Tickertape getUser={this.getUser} />} />
 
 
               </Switch>

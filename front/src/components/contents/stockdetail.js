@@ -3,6 +3,7 @@ import axios from "axios";
 import News from "./news"
 import Chart from "./chart"
 import "./_stockdetail.css"
+import Followbutton from './followbutton';
 
 
 
@@ -109,7 +110,7 @@ export default class Stockdetail extends Component {
                         <p>{this.state.profile.sector}</p>
                         <img href={this.state.profile.image}></img>
 
-
+                        <Followbutton ></Followbutton>
                     </div>
 
                     <Chart data={this.state.name}></Chart>
@@ -125,8 +126,8 @@ export default class Stockdetail extends Component {
 
 
                         <tr >
-                            <td class="arriba">{this.state.news.map(data => <a href={data["source url"]} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>
-                            <td class="abajo"> {this.state.news.map(data => <p>{data.description}</p>)}</td>
+                            <td class="arriba">{this.state.news.map(data => <tr><a href={data["source url"]} target="_blank" rel="noopener noreferrer"><tr>{data.title}</tr></a></tr>)}</td>
+                            <td class="abajo"> {this.state.news.map(data => <tr>{data.description}</tr>)}</td>
 
 
                             {/* <td>{this.state.news.map(data => <a href={data.url} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>

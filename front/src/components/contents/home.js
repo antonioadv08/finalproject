@@ -7,6 +7,7 @@ import MostActive from './mostActive';
 import SectorsPerfomance from './sectorsPerfomance';
 import "./_home.css"
 import Tv from './Tv';
+import Tickertape from '../tickertape';
 
 export default class home extends Component {
 
@@ -57,7 +58,7 @@ export default class home extends Component {
                 </div>
                 <div class="stockspaneldown">
                     <SectorsPerfomance></SectorsPerfomance>
-                    <Tv></Tv>
+                    {/* <Tv></Tv> */}
                 </div>
             </div>
         )
