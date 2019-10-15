@@ -23,6 +23,7 @@ import CreateRecomendation from "./components/contents/createRecomendation";
 import Followbutton from "./components/contents/followbutton";
 import Watchlist from "./components/contents/watchlist";
 import Tickertape from "./components/tickertape";
+import Economiccalendar from "./components/contents/economiccalendar";
 
 
 
@@ -130,6 +131,7 @@ class App extends Component {
                 <Route exact path="/followbutton" render={() => <Followbutton getUser={this.getUser} />} />
                 <Route exact path="/watchlist" render={() => <Watchlist getUser={this.getUser} />} />
                 <Route exact path="/tickertape" render={() => <Tickertape getUser={this.getUser} />} />
+                <Route exact path="/economiccalendar" render={() => <Economiccalendar getUser={this.getUser} />} />
 
 
               </Switch>

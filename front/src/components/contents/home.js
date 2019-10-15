@@ -8,6 +8,7 @@ import SectorsPerfomance from './sectorsPerfomance';
 import "./_home.css"
 import Tv from './Tv';
 import Tickertape from '../tickertape';
+import Economiccalendar from './economiccalendar';
 
 export default class home extends Component {
 
@@ -58,6 +59,7 @@ export default class home extends Component {
                 </div>
                 <div class="stockspaneldown">
                     <SectorsPerfomance></SectorsPerfomance>
+                    <Economiccalendar></Economiccalendar>
                     {/* <Tv></Tv> */}
                 </div>
             </div>
