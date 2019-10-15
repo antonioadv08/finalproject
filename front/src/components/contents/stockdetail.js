@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import News from "./news"
+import {Link} from 'react-router-dom'
 import Chart from "./chart"
 import "./_stockdetail.css"
 import Followbutton from './followbutton';
+import service from "../auth/AuthService"
 
 
 
@@ -15,8 +17,13 @@ export default class Stockdetail extends Component {
             profile: [],
             news: [],
 
+
         };
+        this.services = new service()
+
     }
+
+
 
     getData = (companyID) => {
         axios
@@ -81,68 +88,75 @@ export default class Stockdetail extends Component {
     //         });
     // };
 
-
-
-    componentDidMount() {
-        this.getData(this.props.companyID);
-        this.getProfile(this.props.companyID);
-        this.getNews(this.props.companyID);
+    savecompanyID=()=> {
+        console.log(this.props.getUser)
+        this.services.addcompany(this.props.companyID)
 
     }
 
-    render() {
 
-        return (
 
-            <div>
+componentDidMount() {
+    
+    this.getData(this.props.companyID);
+    this.getProfile(this.props.companyID);
+    this.getNews(this.props.companyID);
 
-                {this.props.companyID} {this.state.profile.companyName}
-                <div class="distribution">
-                    <div>
-                        <p>ceo:{this.state.profile.ceo}</p>
-                        <p>Company Name:{this.state.profile.companyName}</p>
-                        <p>Price:{this.state.profile.price}</p>
-                        <p>Market Cap:{this.state.profile.mktCap}</p>
-                        <p>Last dividend:{this.state.profile.lastDiv}</p>
-                        <p>Changues percentaje:{this.state.profile.changesPercentage}</p>
-                        <a href={this.state.profile.website} target="_blank" rel="noopener noreferrer"><p>{this.state.profile.website}</p></a>
-                        <p>{this.state.profile.description}</p>
-                        <p>{this.state.profile.sector}</p>
-                        <img href={this.state.profile.image}></img>
+}
 
-                        <Followbutton ></Followbutton>
-                    </div>
+render() {
 
-                    <Chart data={this.state.name}></Chart>
-                    {/* <News data={this.state.name}></News> */}
+    return (
 
-                </div>
+        <div>
+
+            {this.props.companyID} {this.state.profile.companyName}
+            <div class="distribution">
                 <div>
-                    <table  >
-                        <tr>
-                            <th>title</th>
-                            <th>description</th>
-                        </tr>
+                    <p>ceo:{this.state.profile.ceo}</p>
+                    <p>Company Name:{this.state.profile.companyName}</p>
+                    <p>Price:{this.state.profile.price}</p>
+                    <p>Market Cap:{this.state.profile.mktCap}</p>
+                    <p>Last dividend:{this.state.profile.lastDiv}</p>
+                    <p>Changues percentaje:{this.state.profile.changesPercentage}</p>
+                    <a href={this.state.profile.website} target="_blank" rel="noopener noreferrer"><p>{this.state.profile.website}</p></a>
+                    <p>{this.state.profile.description}</p>
+                    <p>{this.state.profile.sector}</p>
+                    <img href={this.state.profile.image}></img>
+
+                    <button onClick={() => this.savecompanyID()}>follow stock</button>
+                </div>
+
+                <Chart data={this.state.name}></Chart>
+                {/* <News data={this.state.name}></News> */}
+
+            </div>
+            <div>
+                <table  >
+                    <tr>
+                        <th>title</th>
+                        <th>description</th>
+                    </tr>
 
 
-                        <tr >
-                            <td class="arriba">{this.state.news.map(data => <tr><a href={data["source url"]} target="_blank" rel="noopener noreferrer"><tr>{data.title}</tr></a></tr>)}</td>
-                            <td class="abajo"> {this.state.news.map(data => <tr>{data.description}</tr>)}</td>
+                    <tr >
+                        <td class="arriba">{this.state.news.map(data => <tr><a href={data["source url"]} target="_blank" rel="noopener noreferrer"><tr>{data.title}</tr></a></tr>)}</td>
+                        <td class="abajo"> {this.state.news.map(data => <tr>{data.description}</tr>)}</td>
 
 
-                            {/* <td>{this.state.news.map(data => <a href={data.url} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>
+                        {/* <td>{this.state.news.map(data => <a href={data.url} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>
                                 <td> {this.state.news.map(data => <p>{data.description}</p>)}</td>
                                 <td> {this.state.news.map(data => <p>{data.urlToImage}</p>)}</td> */}
 
-                        </tr>
+                    </tr>
 
 
 
-                    </table>
-
-                </div>
+                </table>
 
             </div>
-        )
-    }
+
+        </div>
+    )
+}
 }

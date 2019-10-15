@@ -4,8 +4,8 @@ import axios from 'axios';
 class AuthService {
   constructor() {
     this.service = axios.create({
-      baseURL: `https://stockiron.herokuapp.com/api/auth`,
-      // baseURL:"http://localhost:3010/api/auth",
+      // baseURL: `https://stockiron.herokuapp.com/api/auth`,
+      baseURL:"http://localhost:3010/api/auth",
       withCredentials: true
     });
   }
@@ -19,16 +19,24 @@ class AuthService {
     return this.service.post('/login', {username, password})
     .then(response => response.data)
   }
-
+  
   loggedin = () => {
     return this.service.get('/currentUser',)
     .then(response => response.data)
   }
-
+  
   logout = () => {
     return this.service.get('/logout',)
     .then(response => response.data)
   }
+
+  addcompany = (company) => {
+    console.log(company)
+    return this.service.post('/addcompany',{company})
+    .then(response => response.data)
+  }
+
 }
+
 
 export default AuthService;

@@ -115,7 +115,7 @@ class App extends Component {
                 <Route exact path="/login" render={() => <Login getUser={this.getUser} />} />
                 <Route exact path="/Screener" render={() => <Screener getUser={this.getUser} />} />
                 <Route exact path="/stockdetail/:companyID" render={(props) => {
-                  return <Stockdetail companyID={props.match.params.companyID}  getUser={this.getUser} />}}
+                  return <Stockdetail companyID={props.match.params.companyID} getUser={this.getUser} />}}
                    />
 
                 <Route exact path="/tv" render={() => <Tv getUser={this.getUser} />} />
