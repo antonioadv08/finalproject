@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from './AuthService'
+import "./_login.css"
 
 class Login extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class Login extends Component {
   render() {
 
     return (<div>
-      <h3>Please, login to our site</h3>
+      <h2>Please, login to our site</h2>
 
       <form onSubmit={this.handleFormSubmit}>
         <fieldset>

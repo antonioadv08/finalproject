@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import ReactApexChart from "react-apexcharts";
+import "./_sectorsPerfomance.css"
 
 
 export default class SectorsPerfomance extends Component {
@@ -32,7 +33,7 @@ export default class SectorsPerfomance extends Component {
     render() {
         return (
             <div>
-                <table>
+                <table class="sectorperfomancetable">
                 <h3>Sector perfomance</h3>
 
                     <tr>

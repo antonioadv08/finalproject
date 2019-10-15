@@ -1,9 +1,14 @@
-.nav-style .header {
+.nav-style {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 30px;
+	margin-right: 20px;
+
 }
 
-.nav-style .header img {
-	margin-right: 20px;
+.links {
+	text-decoration: none;
+
 }
+

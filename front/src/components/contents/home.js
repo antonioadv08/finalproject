@@ -24,7 +24,7 @@ export default class home extends Component {
             .get(`https://financialmodellingprep.com/api/v3/majors-indexes/.INX`
             )
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 this.setState({
                     name: response.data
                 });

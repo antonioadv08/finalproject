@@ -10,12 +10,7 @@
 table, th, td {
     border: 1px solid black;
   }
-.arriba{
+.newstable{
+    font-size: 15px;
+background-color: aqua;
 }
-
-.abajo{
-}
-
-tr{
-}
-

@@ -132,7 +132,7 @@ render() {
 
             </div>
             <div>
-                <table  >
+                <table  class="newstable">
                     <tr>
                         <th>title</th>
                         <th>description</th>
