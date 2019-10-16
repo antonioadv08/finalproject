@@ -7,7 +7,6 @@ import MostActive from './mostActive';
 import SectorsPerfomance from './sectorsPerfomance';
 import "./_home.css"
 import Tv from './Tv';
-import Tickertape from './tickertape';
 import Economiccalendar from './economiccalendar';
 
 export default class home extends Component {
@@ -16,6 +15,8 @@ export default class home extends Component {
         super(props)
         this.state = {
             name: [],
+            news: [],
+
         };
     }
 
@@ -33,21 +34,40 @@ export default class home extends Component {
             });
     };
 
+    getNews = () => {
+
+        axios
+            .get(`https://newsapi.org/v2/everything?language=en&q=stocks&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWSAPI_KEY}`)
+
+            .then(response => {
+
+                this.setState({
+                    news: response.data.articles
+                });
+
+
+
+            });
+    };
+
+
     componentDidMount() {
         this.getData();
+        this.getNews();
+
     }
 
     render() {
-        // console.log(this.name.indexName)
+        console.log(this.state.news)
 
         return (
             <div>
                 <Screener></Screener>
 
                 {this.state.name.indexName}
-                <br/>
+                <br />
                 {this.state.name.changes}
-                <br/>
+                <br />
 
                 {this.state.name.price}
 
@@ -61,6 +81,25 @@ export default class home extends Component {
                     <SectorsPerfomance></SectorsPerfomance>
                     <Economiccalendar></Economiccalendar>
                     {/* <Tv></Tv> */}
+
+
+                    <table class="newstable">
+                        <tr>
+                            <th>News</th>
+                        </tr>
+                        <tr >
+                            <td>{this.state.news.map(data =>
+                                <div>
+                                    <img src={data.urlToImage} width="50px" height="50px"></img>
+                                    <a href={data.url} target="_blank" rel="noopener noreferrer">
+                                        <p>{data.title}</p></a>
+                                    <p>{data.description}</p>
+                                </div>
+                            )}
+                            </td>
+                        </tr>
+                    </table>
+
                 </div>
             </div>
         )

@@ -28,15 +28,15 @@ class Navbar extends Component {
         <nav className="nav-style">
           <ul>
             <li>
-              <a onClick={this.handleLogout} class="links">Logout</a>
-            </li>
-           
-            <li>
               <Link class="links" to="/home">Home</Link>
             </li>
             <li>
               <Link class="links" to="/watchlist">watchlist</Link>
             </li>
+            <li>
+              <a onClick={this.handleLogout} class="links">Logout</a>
+            </li>
+           
           </ul>
 
 
