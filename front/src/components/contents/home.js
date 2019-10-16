@@ -89,7 +89,7 @@ export default class home extends Component {
                                         </div>
                                         <div class="titleanddescription">
                                             <a href={data.url} target="_blank" rel="noopener noreferrer">
-                                                <h3>{data.title}</h3></a>
+                                                <h3 class="h3home">{data.title}</h3></a>
                                             <p>{data.description}</p>
                                         </div>
 

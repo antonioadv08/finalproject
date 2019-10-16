@@ -37,7 +37,7 @@ class Navbar extends Component {
               <a onClick={this.handleLogout} class="links">Logout</a>
             </li>
             <li>
-              <Link class="links" to="/forexpanel">forexpanel</Link>
+              <Link class="links" to="/forexpanel">Forexpanel</Link>
             </li>
           </ul>
 
@@ -61,7 +61,9 @@ class Navbar extends Component {
               {/* <li>
                 <Link to="/createRecomendation">Create recomendation</Link>
               </li> */}
-             
+               <li>
+              <Link class="links" to="/forexpanel">Forexpanel</Link>
+            </li>
             
             </ul>
           </nav>

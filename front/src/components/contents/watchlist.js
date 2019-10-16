@@ -24,7 +24,7 @@ export default class Watchlist extends Component {
             .get(`https://financialmodellingprep.com/api/v3/company/profile/${stocks}`
             )
             .then(response => {
-
+console.log(response.data)
                 this.setState({
                     ...this.state,
                     name: response.data.companyProfiles
@@ -53,7 +53,7 @@ export default class Watchlist extends Component {
         // console.log(newData)
 
         // console.log(newDataSeries.data)
-
+console.log(this.state.name)
         let newArr = this.state.name.map(el=> Object.keys(el.profile).map((elm,idx)=>({[elm]:Object.values(el.profile)[idx]})))
         console.log(newArr)
         return (

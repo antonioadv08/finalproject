@@ -83,8 +83,7 @@ class App extends Component {
       //en este caso mostramos los contenidos ya que hay usuario
       return (
         <React.Fragment>
-          <Redirect  />
-
+<Redirect/>
           <div className="App">
             <header className="App-header">
               <Tickertape></Tickertape>
@@ -122,7 +121,7 @@ class App extends Component {
       return (
         <React.Fragment>
           <Redirect  />
-
+        
           <div className="App">
             <header className="App-header">
             <Tickertape></Tickertape>

@@ -10,14 +10,19 @@ margin-bottom: 80px;
 }
 .newstable{
     font-size: 15px;
-    background-color: white;
+    background-color: #23252A;
     display:block;
     overflow:auto;
     height:600px;
     width:510px;
+    color:white
     
     
     }
+.h3home{
+	text-decoration: none;
+	color:white;
+}
 
 .economiccalendar{
     margin:0px 50px

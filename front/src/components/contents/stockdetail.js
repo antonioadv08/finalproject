@@ -3,6 +3,7 @@ import axios from "axios";
 import Chart from "./chart"
 import "./_stockdetail.css"
 import service from "../auth/AuthService"
+import Screener from './Screener';
 
 
 
@@ -105,6 +106,7 @@ export default class Stockdetail extends Component {
         return (
 
             <div>
+                <Screener></Screener>
 
                 {this.props.companyID} {this.state.profile.companyName}
                 <div class="distribution">

@@ -1,2 +1,9 @@
 input{
-color:red}
+color:black;
+height: 50px;
+width: 400px;
+border-radius: 15px;
+margin: 20px;
+font-size: 16px;
+
+}

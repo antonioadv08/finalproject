@@ -51,16 +51,16 @@ export default class Screener extends Component {
             <div>
                 {Array.isArray(this.state.name) ?
                     <div>
-                        <div>
+                        <div class="input">
                             <label htmlFor="search">Search</label>
                             <input
                                 placeholder="Search by ticker or company name..."
                                 type="text"
                                 name="search"
+                                size="25px"
                                 id="search"
                                 value={this.state.search}
                                 onChange={this.handleSearch}
-                               size="50"   
                                 />
 
                         </div>
@@ -74,7 +74,7 @@ export default class Screener extends Component {
                                 </div>
                             );
                         })}</div> :
-                    <div>
+                    <div class="input">
                         <label htmlFor="search">Search</label>
                         <input
                             placeholder="Search by ticker or company name..."
