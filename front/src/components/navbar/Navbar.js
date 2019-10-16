@@ -31,12 +31,14 @@ class Navbar extends Component {
               <Link class="links" to="/home">Home</Link>
             </li>
             <li>
-              <Link class="links" to="/watchlist">watchlist</Link>
+              <Link class="links" to="/watchlist">Watchlist</Link>
             </li>
             <li>
               <a onClick={this.handleLogout} class="links">Logout</a>
             </li>
-           
+            <li>
+              <Link class="links" to="/forexpanel">forexpanel</Link>
+            </li>
           </ul>
 
 
@@ -45,7 +47,6 @@ class Navbar extends Component {
       );
     } else {
       return (
-        <div>
           <nav className="nav-style">
             <ul>
               <li>
@@ -64,7 +65,6 @@ class Navbar extends Component {
             
             </ul>
           </nav>
-        </div>
       );
     }
   }

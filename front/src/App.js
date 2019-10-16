@@ -24,7 +24,8 @@ import Followbutton from "./components/contents/followbutton";
 import Watchlist from "./components/contents/watchlist";
 import Tickertape from "./components/contents/tickertape";
 import Economiccalendar from "./components/contents/economiccalendar";
-
+import Forexpanel from "./components/contents/forexpanel";
+import Footer from "./components/contents/footer"
 
 
 
@@ -108,7 +109,10 @@ class App extends Component {
                 <Route exact path="/watchlist" render={() => <Watchlist userInSession={this.state.loggedInUser} getUser={this.fecthUser} />} />
                 <Route exact path="/tickertape" render={() => <Tickertape getUser={this.getUser} />} />
                 <Route exact path="/economiccalendar" render={() => <Economiccalendar getUser={this.getUser} />} />
+                <Route exact path="/forexpanel" render={() => <Forexpanel getUser={this.getUser} />} />
+
               </Switch>
+              <Footer></Footer>
             </header>
           </div>
         </React.Fragment>
@@ -146,6 +150,8 @@ class App extends Component {
                 <Route exact path="/watchlist" render={() => <Watchlist getUser={this.getUser} />} />
                 <Route exact path="/tickertape" render={() => <Tickertape getUser={this.getUser} />} />
                 <Route exact path="/economiccalendar" render={() => <Economiccalendar getUser={this.getUser} />} />
+                <Route exact path="/forexpanel" render={() => <Forexpanel getUser={this.getUser} />} />
+
 
 
               </Switch>

@@ -74,7 +74,6 @@ export default class Stockdetail extends Component {
             .get(`https://newsapi.org/v2/everything?language=en&q=${companyID}&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWSAPI_KEY}`)
 
             .then(response => {
-                console.log(response.data.articles)
 
                 this.setState({
                     news: response.data.articles
@@ -86,7 +85,6 @@ export default class Stockdetail extends Component {
     };
 
     savecompanyID = () => {
-        console.log(this.props.getUser)
         this.services.addcompany(this.props.companyID)
 
     }
@@ -102,6 +100,7 @@ export default class Stockdetail extends Component {
     }
 
     render() {
+
 
         return (
 
@@ -119,9 +118,10 @@ export default class Stockdetail extends Component {
                         <a href={this.state.profile.website} target="_blank" rel="noopener noreferrer"><p>{this.state.profile.website}</p></a>
                         <p>{this.state.profile.description}</p>
                         <p>{this.state.profile.sector}</p>
-                        <img href={this.state.profile.image}></img>
+                        <img src={this.state.profile.image}></img>
 
                         <button onClick={() => this.savecompanyID()}>follow stock</button>
+
                     </div>
 
                     <Chart data={this.state.name}></Chart>
@@ -131,28 +131,33 @@ export default class Stockdetail extends Component {
                     {/* <table class="newstable">
                         <tr>
                             <th>News</th>
-                        </tr>
+                            </tr>
 
 
-                        <tr >
+                            <tr >
                             <td class="arriba">{this.state.news.map(data =>
                                 <tr><a href={data["source url"]} target="_blank" rel="noopener noreferrer"><tr>{data.title}</tr></a>
                                     <p>{data.description}</p>
-                                </tr>)}</td>
+                                    </tr>)}</td>
                         </tr>
                     </table> */}
-
                     <table class="newstable">
                         <tr>
                             <th>News</th>
+
                         </tr>
                         <tr >
                             <td>{this.state.news.map(data =>
-                                <div>
-                                    <img src={data.urlToImage} width="50px" height="50px"></img>
-                                    <a href={data.url} target="_blank" rel="noopener noreferrer">
-                                        <p>{data.title}</p></a>
-                                    <p>{data.description}</p>
+                                <div class="insidenews">
+                                    <div>
+                                        <img src={data.urlToImage} width="170px" height="130px"></img>
+                                    </div>
+                                    <div class="titleanddescription">
+                                        <a href={data.url} target="_blank" rel="noopener noreferrer">
+                                            <h2>{data.title}</h2></a>
+                                        <p>{data.description}</p>
+                                    </div>
+
                                 </div>
                             )}
                             </td>

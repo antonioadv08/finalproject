@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import "./_mostLosers.css"
+import { Link } from "react-router-dom";
 
 
 export default class MostLosers extends Component {
@@ -41,8 +42,8 @@ export default class MostLosers extends Component {
                         <th>Price change</th>
                     </tr>
                     <tr>
-                        <td>{this.state.name.map(data => <p>{data.ticker}</p>)}</td>
-                        <td>{this.state.name.map(data => <p>{data.companyName}</p>)}</td>
+                        <td>{this.state.name.map(data => <Link to={`stockdetail/${data.ticker}`}><p>{data.ticker}</p></Link>)}</td>
+                        <td>{this.state.name.map(data => <Link to={`stockdetail/${data.ticker}`}><p>{data.companyName}</p></Link>)}</td>
                         <td> {this.state.name.map(data => <p>{data.changesPercentage}</p>)}</td>
                     </tr>
                 </table>

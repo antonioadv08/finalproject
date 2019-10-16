@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./_mostActive.css"
 
@@ -42,13 +43,15 @@ export default class MostActive extends Component {
                         <th>Price change</th>
                     </tr>
                     <tr>
-                        <td>{this.state.name.map(data => <p>{data.ticker}</p>)}</td>
-                        <td>{this.state.name.map(data => <p>{data.companyName}</p>)}</td>
+                        <td>{this.state.name.map(data => <Link to={`stockdetail/${data.ticker}`}><p>{data.ticker}</p></Link>)}</td>
+                        <td>{this.state.name.map(data => <Link to={`stockdetail/${data.ticker}`}><p>{data.companyName}</p></Link>)}</td>
                         <td> {this.state.name.map(data => <p>{data.changesPercentage}</p>)}</td>
                     </tr>
                 </table>
 
 
+
+{/* <Link to={`stockdetail/${data.ticker}`}>  <p>{data}</p></Link> */}
 
 
             </div>

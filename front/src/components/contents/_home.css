@@ -5,12 +5,32 @@ margin-bottom: 80px;
 }
 
 .stockspaneldown{
-    display:flex;
     align-content: space-between;
     
 }
 .newstable{
     font-size: 15px;
-    background-color: aqua;
+    background-color: white;
+    display:block;
+    overflow:auto;
+    height:600px;
+    width:510px;
+    
     
     }
+
+.economiccalendar{
+    margin:0px 50px
+}
+
+.insidenews{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.seccionabajo{
+    display:flex;
+}
+
+

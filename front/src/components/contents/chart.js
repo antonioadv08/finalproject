@@ -40,6 +40,7 @@ class App extends Component {
     }
 
     render() {
+        console.log(this.props.data)
 
         let newData = this.props.data.map(act => ({ x: act.date, y: [act.open, act.high, act.low, act.close] }))
         let newDataSeries = [{ "data": [...newData] }]

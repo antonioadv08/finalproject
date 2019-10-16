@@ -58,7 +58,6 @@ export default class home extends Component {
     }
 
     render() {
-        console.log(this.state.news)
 
         return (
             <div>
@@ -75,31 +74,39 @@ export default class home extends Component {
                 <div class="stockspanel">
                     <MostGainers></MostGainers>
                     <MostLosers></MostLosers>
-                    <MostActive></MostActive>
+                    <div class="stockspaneldown">
+
+                        <table class="newstable">
+                            <tr>
+                                <th>News</th>
+
+                            </tr>
+                            <tr >
+                                <td>{this.state.news.map(data =>
+                                    <div class="insidenews">
+                                        <div>
+                                            <img src={data.urlToImage} width="170px" height="130px"></img>
+                                        </div>
+                                        <div class="titleanddescription">
+                                            <a href={data.url} target="_blank" rel="noopener noreferrer">
+                                                <h3>{data.title}</h3></a>
+                                            <p>{data.description}</p>
+                                        </div>
+
+                                    </div>
+                                )}
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
                 </div>
-                <div class="stockspaneldown">
+
+                {/* <Tv></Tv> */}
+                <div class="seccionabajo">
                     <SectorsPerfomance></SectorsPerfomance>
-                    <Economiccalendar></Economiccalendar>
-                    {/* <Tv></Tv> */}
-
-
-                    <table class="newstable">
-                        <tr>
-                            <th>News</th>
-                        </tr>
-                        <tr >
-                            <td>{this.state.news.map(data =>
-                                <div>
-                                    <img src={data.urlToImage} width="50px" height="50px"></img>
-                                    <a href={data.url} target="_blank" rel="noopener noreferrer">
-                                        <p>{data.title}</p></a>
-                                    <p>{data.description}</p>
-                                </div>
-                            )}
-                            </td>
-                        </tr>
-                    </table>
-
+                    <MostActive></MostActive>
+                        <Economiccalendar class="economiccalendar"></Economiccalendar>
                 </div>
             </div>
         )
