@@ -46,9 +46,9 @@ export default class Stockdetail extends Component {
 
 
             .then(response => {
-
+                if (Object.entries(response.data).length === 0 && response.data.constructor === Object) { response = null } else { response = response.data.profile }
                 this.setState({
-                    profile: response.data.profile
+                    profile: response
                 });
             });
     };
@@ -104,27 +104,39 @@ export default class Stockdetail extends Component {
 
 
         return (
-
             <div>
                 <Screener></Screener>
 
-                {this.props.companyID} {this.state.profile.companyName}
+{this.props.companyID}
+
                 <div class="distribution">
-                    <div>
-                        <p>ceo:{this.state.profile.ceo}</p>
-                        <p>Company Name:{this.state.profile.companyName}</p>
-                        <p>Price:{this.state.profile.price}</p>
-                        <p>Market Cap:{this.state.profile.mktCap}</p>
-                        <p>Last dividend:{this.state.profile.lastDiv}</p>
-                        <p>Changues percentaje:{this.state.profile.changesPercentage}</p>
-                        <a href={this.state.profile.website} target="_blank" rel="noopener noreferrer"><p>{this.state.profile.website}</p></a>
-                        <p>{this.state.profile.description}</p>
-                        <p>{this.state.profile.sector}</p>
-                        <img src={this.state.profile.image}></img>
+                    {this.state.profile != null ?
+                        <div>
+                            <p>ceo:{this.state.profile.ceo}</p>
+                            <p>Company Name:{this.state.profile.companyName}</p>
+                            <p>Price:{this.state.profile.price}$</p>
+                            <p>Market Cap:{this.state.profile.mktCap}$</p>
+                            <p>Last dividend:{this.state.profile.lastDiv}$</p>
+                            <p>Changues percentaje:{this.state.profile.changesPercentage}</p>
+                            <a href={this.state.profile.website} target="_blank" rel="noopener noreferrer"><p>{this.state.profile.website}</p></a>
+                            <p>{this.state.profile.description}</p>
+                            <p>{this.state.profile.sector}</p>
+                            <img src={this.state.profile.image}></img>
 
-                        <button onClick={() => this.savecompanyID()}>follow stock</button>
+                            <button >follow stock</button>
 
-                    </div>
+                            <div class="switch">
+                                <input type="checkbox" onClick={() => this.savecompanyID()} />
+                                <label><i></i></label>
+                            </div>
+
+
+                        </div>
+                        :
+                        <div>
+                            <h1>No data avaible for this stock</h1>
+                        </div>
+                    }
 
                     <Chart data={this.state.name}></Chart>
 
@@ -146,7 +158,6 @@ export default class Stockdetail extends Component {
                     <table class="newstable">
                         <tr>
                             <th>News</th>
-
                         </tr>
                         <tr >
                             <td>{this.state.news.map(data =>
@@ -159,17 +170,11 @@ export default class Stockdetail extends Component {
                                             <h2>{data.title}</h2></a>
                                         <p>{data.description}</p>
                                     </div>
-
                                 </div>
                             )}
                             </td>
                         </tr>
                     </table>
-
-
-
-
-
                 </div>
 
             </div>

@@ -49,7 +49,7 @@ export default class Screener extends Component {
         return (
 
             <div>
-                {Array.isArray(this.state.name) ?
+                
                     <div>
                         <div class="inputdiv">
                             <input
@@ -65,32 +65,22 @@ export default class Screener extends Component {
                         </div>
 
 
-                        {this.state.name.map(el => {
+                        {Array.isArray(this.state.name)  && this.state.name.map(el => {
 
                             return (
-                                <table className="screenertable">
-                                        <tr >
-                                        <Link className="linkscreener" to={`stockdetail/${el["1. symbol"]}`}>
-                                            <td class="namecompany">{el["2. name"]}</td>
-                                            <td class="symbolcompany">{el["1. symbol"]}</td>
+                                    <table class="screenertable">
+                                        <tr class="trscreener" >
+                                            <Link class="linkscreener" to={`stockdetail/${el["1. symbol"]}`}>
+                                                <td class="namecompany"><p class="pscreener">{el["2. name"]}</p></td>
+                                                <td class="symbolcompany"><p class="pscreener">{el["1. symbol"]}</p></td>
 
-                                        </Link>
+                                            </Link>
                                         </tr>
-                                </table>);
-                        })}</div> :
-                    <div >
-                        <input
-                            class="inputscreener"
-                            placeholder="Search by ticker or company name..."
-                            type="text"
-                            name="search"
-                            id="search"
-                            value={this.state.search}
-                            onChange={this.handleSearch}
-                        />
-
-                    </div>
-                }
+                                    </table>
+                            );
+                        })}</div>
+                    
+                
             </div>
         )
     }

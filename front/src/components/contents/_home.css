@@ -15,8 +15,11 @@ margin-bottom: 80px;
     overflow:auto;
     height:600px;
     width:510px;
-    color:white
-    
+    color:white;
+    /* right: 0px;
+    top: 140px;
+    position: absolute; */
+      
     
     }
 .h3home{
@@ -36,5 +39,7 @@ margin-bottom: 80px;
 .seccionabajo{
     display:flex;
 }
+.sp500table{
 
+}
 

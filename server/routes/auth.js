@@ -88,8 +88,6 @@ router.use((err, req, res, next) => {
 
 router.post('/addcompany', (req, res) => {
   const { company } = req.body
-  console.log(company)
-  console.log(req.user._id)
 
   User.findByIdAndUpdate(req.user._id, { $push: { stocksFollow: company } }, { new: true })
     .then(resp => console.log(resp))

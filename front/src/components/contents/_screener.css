@@ -3,7 +3,7 @@
   height: 60px;
   width: 600px;
   border-radius: 15px;
-  margin: 55px;
+  margin: 55px 55px 5px 55px;
   font-size: 16px;
   border: solid 2px black;
   
@@ -26,23 +26,48 @@
   margin: auto;
   border: line px black;
   width: 600px;
+  border-spacing: 0px;
+  
+
+  
 }
 
 .namecompany {
+  text-decoration-style: none;
+
 }
 
 .symbolcompany {
-float: right;}
+float: right;
+}
 
 .trscreener{
-display: flex;
-justify-content: space-between
+
 }
 
 Link{
     width: 100%;
+    
 }
 
 .inputdiv{
 text-align: center;
+}
+
+.pscreener{
+  margin:0px;
+  text-decoration: none;
+  color: #23252a;
+  font-size: 20px;
+  font-weight: bold;
+}
+.pscreener:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.linkscreener{
+  text-decoration: none;
+
 }

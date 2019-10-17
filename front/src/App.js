@@ -26,6 +26,7 @@ import Tickertape from "./components/contents/tickertape";
 import Economiccalendar from "./components/contents/economiccalendar";
 import Forexpanel from "./components/contents/forexpanel";
 import Footer from "./components/contents/footer"
+import Twitter from "./components/contents/twitter";
 
 
 
@@ -83,7 +84,7 @@ class App extends Component {
       //en este caso mostramos los contenidos ya que hay usuario
       return (
         <React.Fragment>
-          <Redirect />
+          <Redirect to="/home" />
           <div className="App">
             <header className="App-header">
               <Tickertape></Tickertape>
@@ -114,6 +115,8 @@ class App extends Component {
                 <Route exact path="/tickertape" render={() => <Tickertape getUser={this.getUser} />} />
                 <Route exact path="/economiccalendar" render={() => <Economiccalendar getUser={this.getUser} />} />
                 <Route exact path="/forexpanel" render={() => <Forexpanel getUser={this.getUser} />} />
+                <Route exact path="/" render={() => <Home getUser={this.getUser} />} />
+                <Route exact path="/twitter" render={() => <Twitter getUser={this.getUser} />} />
 
               </Switch>
               <Footer></Footer>
@@ -125,7 +128,6 @@ class App extends Component {
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
         <React.Fragment>
-          <Redirect />
 
           <div className="App">
             <header className="App-header">
@@ -160,6 +162,8 @@ class App extends Component {
                 <Route exact path="/tickertape" render={() => <Tickertape getUser={this.getUser} />} />
                 <Route exact path="/economiccalendar" render={() => <Economiccalendar getUser={this.getUser} />} />
                 <Route exact path="/forexpanel" render={() => <Forexpanel getUser={this.getUser} />} />
+                <Route exact path="/" render={() => <Home getUser={this.getUser} />} />
+                <Route exact path="/twitter" render={() => <Twitter getUser={this.getUser} />} />
 
 
 

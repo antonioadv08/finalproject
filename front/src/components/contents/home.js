@@ -60,22 +60,18 @@ export default class home extends Component {
     render() {
         console.log(this.state.name)
         return (
-            <div class="daddiv">
+            <div >
                 <Screener></Screener>
 
-                <table>
+                <table className="sp500table">
                     <td>
-                        <tr>{this.state.name.indexName}</tr>
+                        <tr><h1>{this.state.name.indexName}</h1></tr>
                         <tr>STOCK MARKET INDEX</tr>
-                        <tr>INDEX VALUE: {this.state.name.price}</tr>
+                        <tr><p>INDEX VALUE: <h2>{this.state.name.price}</h2> points</p></tr>
                         <tr>{this.state.name.changes}%</tr>
                     </td>
                 </table>
 
-                <div class="stockspanel">
-                    <MostGainers></MostGainers>
-                    <MostLosers></MostLosers>
-                    <div class="stockspaneldown">
 
                         <table class="newstable">
                             <tr>
@@ -99,6 +95,11 @@ export default class home extends Component {
                                 </td>
                             </tr>
                         </table>
+                <div class="stockspanel">
+                    <MostGainers></MostGainers>
+                    <MostLosers></MostLosers>
+                    <div class="stockspaneldown">
+
 
                     </div>
                 </div>
