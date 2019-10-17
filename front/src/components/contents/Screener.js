@@ -53,6 +53,7 @@ export default class Screener extends Component {
                     <div>
                         <div class="inputdiv">
                             <input
+                            autoComplete="off"
                                 class="inputscreener"
                                 placeholder="Search by ticker or company name..."
                                 type="text"
@@ -65,6 +66,7 @@ export default class Screener extends Component {
                         </div>
 
 
+                        <div class="tabladesplegable">
                         {Array.isArray(this.state.name)  && this.state.name.map(el => {
 
                             return (
@@ -79,6 +81,7 @@ export default class Screener extends Component {
                                     </table>
                             );
                         })}</div>
+                        </div>
                     
                 
             </div>

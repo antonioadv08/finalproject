@@ -80,7 +80,7 @@ export default class Stockdetail extends Component {
 
             .then(response => {
 
-                if (Object.entries(response.data).length === 0  && response.data.constructor === Object) { response = null } else { response = response.data.articles }
+                if (Object.entries(response.data).length === 0 && response.data.constructor === Object) { response = null } else { response = response.data.articles }
 
                 this.setState({
                     news: response
@@ -108,26 +108,27 @@ export default class Stockdetail extends Component {
 
     render() {
 
-
+        console.log(this.state.profile)
         return (
             <div>
-                <Screener></Screener>
 
-                {this.props.companyID}
+                <Screener></Screener>
 
                 <div class="distribution">
                     {this.state.profile != null ?
-                        <div>
-                            <p>ceo:{this.state.profile.ceo}</p>
+                        <div class="stocksdetailscomponents">
+                            <img src={this.state.profile.image} alt=""></img>
                             <p>Company Name:{this.state.profile.companyName}</p>
+                            <p>ceo:{this.state.profile.ceo}</p>
                             <p>Price:{this.state.profile.price}$</p>
                             <p>Market Cap:{this.state.profile.mktCap}$</p>
                             <p>Last dividend:{this.state.profile.lastDiv}$</p>
                             <p>Changues percentaje:{this.state.profile.changesPercentage}</p>
                             <a href={this.state.profile.website} target="_blank" rel="noopener noreferrer"><p>{this.state.profile.website}</p></a>
-                            <p>{this.state.profile.description}</p>
-                            <p>{this.state.profile.sector}</p>
-                            <img src={this.state.profile.image}></img>
+                            <p>Description:{this.state.profile.description}</p>
+                            <p>Sector:{this.state.profile.sector}</p>
+                            <p>Daily average volume:{this.state.profile.volAvg}</p>
+
 
                             <button >follow stock</button>
 
@@ -145,31 +146,15 @@ export default class Stockdetail extends Component {
                     }
 
                     {this.state.name != null ?
-                        <Chart data={this.state.name}></Chart>
+                        <Chart class="chartstockdetail" data={this.state.name}></Chart>
                         :
                         <div>
                             <h1>No chart avaible for this stock</h1>
                         </div>
                     }
-                </div>
-                <div>
-                    {/* <table class="newstable">
-                        <tr>
-                            <th>News</th>
-                            </tr>
-
-
-                            <tr >
-                            <td class="arriba">{this.state.news.map(data =>
-                                <tr><a href={data["source url"]} target="_blank" rel="noopener noreferrer"><tr>{data.title}</tr></a>
-                                    <p>{data.description}</p>
-                                    </tr>)}</td>
-                        </tr>
-                    </table> */}
-
+                <div class="stocksdetailscomponents">
                     {this.state.news != null ?
-
-                        <table class="newstable">
+                        <table class="newstablestocksdetail">
                             <tr>
                                 <th>News</th>
                             </tr>
@@ -195,6 +180,20 @@ export default class Stockdetail extends Component {
                         </div>
                     }
                 </div>
+                </div>
+                {/* <table class="newstable">
+                        <tr>
+                        <th>News</th>
+                        </tr>
+                        
+                        
+                            <tr >
+                            <td class="arriba">{this.state.news.map(data =>
+                                <tr><a href={data["source url"]} target="_blank" rel="noopener noreferrer"><tr>{data.title}</tr></a>
+                                    <p>{data.description}</p>
+                                    </tr>)}</td>
+                                    </tr>
+                                </table> */}
 
             </div>
         )

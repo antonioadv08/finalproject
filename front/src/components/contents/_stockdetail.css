@@ -1,16 +1,62 @@
 .distribution {
   display: flex;
-  background-color: rgba(108, 255, 71, 0.8);
+  background-color: rgba(239, 245, 237, 0.8);
+  margin:12px 50px;
 }
 
 .datanews {
   font-size: 15px;
 }
 
-.newstable {
+.newstablestocksdetail {
   font-size: 15px;
-  background-color: aqua;
+  font-size: 15px;
+  display:block;
+  overflow:auto;
+  height:600px;
+  width:510px;
 }
+
+.chart{
+  padding-bottom: 50px;
+  margin: 0px 100px
+}
+
+.stocksdetailscomponents{
+  padding-bottom: 50px;
+  padding:0px 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 *,
