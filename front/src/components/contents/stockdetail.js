@@ -22,7 +22,7 @@ export default class Stockdetail extends Component {
 
     }
 
-    componentWillReceiveProps(pro){
+    componentWillReceiveProps(pro) {
         this.getInfo(pro.companyID)
 
     }
@@ -80,8 +80,10 @@ export default class Stockdetail extends Component {
 
             .then(response => {
 
+                if (Object.entries(response.data).length < 3 && response.data.constructor === Object) { response = null } else { response = response.data.articles }
+
                 this.setState({
-                    news: response.data.articles
+                    news: response
                 });
 
 
@@ -111,7 +113,7 @@ export default class Stockdetail extends Component {
             <div>
                 <Screener></Screener>
 
-{this.props.companyID}
+                {this.props.companyID}
 
                 <div class="distribution">
                     {this.state.profile != null ?
@@ -142,8 +144,13 @@ export default class Stockdetail extends Component {
                         </div>
                     }
 
-                    <Chart data={this.state.name}></Chart>
-
+                    {this.state.name != null ?
+                        <Chart data={this.state.name}></Chart>
+                        :
+                        <div>
+                            <h1>No news avaible for this stock</h1>
+                        </div>
+                    }
                 </div>
                 <div>
                     {/* <table class="newstable">
@@ -159,26 +166,34 @@ export default class Stockdetail extends Component {
                                     </tr>)}</td>
                         </tr>
                     </table> */}
-                    <table class="newstable">
-                        <tr>
-                            <th>News</th>
-                        </tr>
-                        <tr >
-                            <td>{this.state.news.map(data =>
-                                <div class="insidenews">
-                                    <div>
-                                        <img src={data.urlToImage} width="170px" height="130px"></img>
+
+                    {this.state.news != null ?
+
+                        <table class="newstable">
+                            <tr>
+                                <th>News</th>
+                            </tr>
+                            <tr >
+                                <td>{this.state.news.map(data =>
+                                    <div class="insidenews">
+                                        <div>
+                                            <img src={data.urlToImage} width="170px" height="130px"></img>
+                                        </div>
+                                        <div class="titleanddescription">
+                                            <a href={data.url} target="_blank" rel="noopener noreferrer">
+                                                <h2>{data.title}</h2></a>
+                                            <p>{data.description}</p>
+                                        </div>
                                     </div>
-                                    <div class="titleanddescription">
-                                        <a href={data.url} target="_blank" rel="noopener noreferrer">
-                                            <h2>{data.title}</h2></a>
-                                        <p>{data.description}</p>
-                                    </div>
-                                </div>
-                            )}
-                            </td>
-                        </tr>
-                    </table>
+                                )}
+                                </td>
+                            </tr>
+                        </table>
+                        :
+                        <div>
+                            <h1>No news avaible for this stock</h1>
+                        </div>
+                    }
                 </div>
 
             </div>
