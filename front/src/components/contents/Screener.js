@@ -70,7 +70,7 @@ export default class Screener extends Component {
                             return (
                                     <table class="screenertable">
                                         <tr class="trscreener" >
-                                            <Link class="linkscreener" to={`stockdetail/${el["1. symbol"]}`}>
+                                            <Link class="linkscreener" to={`/stockdetail/${el["1. symbol"]}`}>
                                                 <td class="namecompany"><p class="pscreener">{el["2. name"]}</p></td>
                                                 <td class="symbolcompany"><p class="pscreener">{el["1. symbol"]}</p></td>
 

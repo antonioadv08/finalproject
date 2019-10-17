@@ -18,10 +18,14 @@ export default class Stockdetail extends Component {
 
         };
         this.services = new service()
+        this.getInfo(this.props.companyID)
 
     }
 
+    componentWillReceiveProps(pro){
+        this.getInfo(pro.companyID)
 
+    }
 
     getData = (companyID) => {
         axios
@@ -92,11 +96,11 @@ export default class Stockdetail extends Component {
 
 
 
-    componentDidMount() {
+    getInfo(companyID) {
 
-        this.getData(this.props.companyID);
-        this.getProfile(this.props.companyID);
-        this.getNews(this.props.companyID);
+        this.getData(companyID);
+        this.getProfile(companyID);
+        this.getNews(companyID);
 
     }
 
