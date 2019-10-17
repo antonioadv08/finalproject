@@ -48,7 +48,7 @@ class App extends Component {
         return (
 
             <div id="chart">
-                <ReactApexChart options={this.state.options} series={newDataSeries} type="candlestick" width="800" height="600" />
+                <ReactApexChart options={this.state.options} series={newDataSeries} type="candlestick" width="700" height="600" />
             </div>
 
         );

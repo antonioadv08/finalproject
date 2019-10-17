@@ -1,6 +1,7 @@
 // auth/Signup.js
 import React, { Component } from 'react';
 import AuthService from './AuthService'
+import "./_signup.css"
 
 //signup y login son iguales a excepción de el html renderizado y el endpoint de nuestra API rest a la que llamamos
 //uno llama a /signup y el otro a /login usando nuestro AuthService
@@ -45,29 +46,72 @@ class Signup extends Component {
 
   render() {
     return(
-      <div>
-        <h3>Welcome!, create your account next:</h3>
 
-        <form onSubmit={this.handleFormSubmit}>
-        <fieldset>
-            <label>Email:</label>
-            <input type="text" name="email" value={this.state.email} onChange={ e => this.handleChange(e)}/>
-          </fieldset>
-          <fieldset>
-            <label>Username:</label>
-            <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
-          </fieldset>
-          
-          <fieldset>
-            <label>Password:</label>
-            <input type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
-          </fieldset>
-          
-          <input type="submit" value="Sign up" />
-        </form>
 
-        <h1>{this.state.error ? 'Error' : ''}</h1>
-      </div>
+<div class="log-form">
+  <form onSubmit={this.handleFormSubmit}>
+  <h2>Login to your account</h2>
+    <input type="text" title="username" placeholder="username" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
+    <input type="password" title="username" placeholder="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)}/>
+    <button type="submit" class="btn">Login</button>
+    <a class="forgot" href="#">Forgot Username?</a>
+  </form>
+  <h1>{this.state.error ? 'Error' : ''}</h1>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // <div>
+      //   <h3>Welcome!, create your account next:</h3>
+
+      //   <form onSubmit={this.handleFormSubmit}>
+      //   <fieldset>
+      //       <label>Email:</label>
+      //       <input type="text" name="email" value={this.state.email} onChange={ e => this.handleChange(e)}/>
+      //     </fieldset>
+      //     <fieldset>
+      //       <label>Username:</label>
+      //       <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
+      //     </fieldset>
+          
+      //     <fieldset>
+      //       <label>Password:</label>
+      //       <input type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
+      //     </fieldset>
+          
+      //     <input type="submit" value="Sign up" />
+      //   </form>
+
+      //   <h1>{this.state.error ? 'Error' : ''}</h1>
+      // </div>
     )
   }
 }

@@ -117,27 +117,24 @@ export default class Stockdetail extends Component {
                 <div class="distribution">
                     {this.state.profile != null ?
                         <div class="stocksdetailscomponents">
-                            <img src={this.state.profile.image} alt=""></img>
-                            <p>Company Name:{this.state.profile.companyName}</p>
-                            <p>ceo:{this.state.profile.ceo}</p>
-                            <p>Price:{this.state.profile.price}$</p>
-                            <p>Market Cap:{this.state.profile.mktCap}$</p>
-                            <p>Last dividend:{this.state.profile.lastDiv}$</p>
-                            <p>Changues percentaje:{this.state.profile.changesPercentage}</p>
-                            <a href={this.state.profile.website} target="_blank" rel="noopener noreferrer"><p>{this.state.profile.website}</p></a>
-                            <p>Description:{this.state.profile.description}</p>
-                            <p>Sector:{this.state.profile.sector}</p>
-                            <p>Daily average volume:{this.state.profile.volAvg}</p>
+                            <table>
+                                <tr><td></td><td>{this.state.profile.companyName}</td></tr>
+                                <img src={this.state.profile.image} alt=""></img>
 
+                                <tr class="tdleft"><td >CEO:</td><td class="tdright">{this.state.profile.ceo}</td></tr>
+                                <tr class="tdleft"><td >Price:</td><td class="tdright">{this.state.profile.price}  $</td></tr>
+                                <tr class="tdleft"><td >Market Cap:</td><td class="tdright">{this.state.profile.mktCap}  $</td></tr>
+                                <tr class="tdleft"><td >Last dividend:</td><td class="tdright">{this.state.profile.lastDiv}  $</td></tr>
+                                <tr class="tdleft"><td >Changes percentage:</td><td class="tdright">{this.state.profile.changesPercentage}</td></tr>
+                                <tr class="tdleft"><td >Description:</td><td class="tdright">{this.state.profile.description}</td></tr>
+                                <tr class="tdleft"><td >Sector:</td><td class="tdright">{this.state.profile.sector}</td></tr>
+                                <tr class="tdleft"><td >Daily average volume:</td><td class="tdright">{this.state.profile.volAvg}</td></tr>
 
-                            <button >follow stock</button>
+                                <tr class="tdleft"><td>Web:</td></tr><td class="tdright"><a href={this.state.profile.website} target="_blank" rel="noopener noreferrer">{this.state.profile.website}</a></td>
 
-                            <div class="switch">
-                                <input type="checkbox" onClick={() => this.savecompanyID()} />
-                                <label><i></i></label>
-                            </div>
-
-
+                            </table>
+                            <button onClick={() => this.savecompanyID()} >Add to watchlist</button>
+                            
                         </div>
                         :
                         <div>
@@ -152,34 +149,34 @@ export default class Stockdetail extends Component {
                             <h1>No chart avaible for this stock</h1>
                         </div>
                     }
-                <div class="stocksdetailscomponents">
-                    {this.state.news != null ?
-                        <table class="newstablestocksdetail">
-                            <tr>
-                                <th>News</th>
-                            </tr>
-                            <tr >
-                                <td>{this.state.news.map(data =>
-                                    <div class="insidenews">
-                                        <div>
-                                            <img src={data.urlToImage} width="170px" height="130px"></img>
+                    <div class="stocksdetailscomponents">
+                        {this.state.news != null ?
+                            <table class="newstablestocksdetail">
+                                <tr>
+                                    <th>News</th>
+                                </tr>
+                                <tr >
+                                    <td>{this.state.news.map(data =>
+                                        <div class="insidenews">
+                                            <div>
+                                                <img src={data.urlToImage} width="170px" height="130px"></img>
+                                            </div>
+                                            <div class="titleanddescription">
+                                                <a href={data.url} target="_blank" rel="noopener noreferrer">
+                                                    <h2>{data.title}</h2></a>
+                                                <p>{data.description}</p>
+                                            </div>
                                         </div>
-                                        <div class="titleanddescription">
-                                            <a href={data.url} target="_blank" rel="noopener noreferrer">
-                                                <h2>{data.title}</h2></a>
-                                            <p>{data.description}</p>
-                                        </div>
-                                    </div>
-                                )}
-                                </td>
-                            </tr>
-                        </table>
-                        :
-                        <div>
-                            <h1>No news avaible for this stock</h1>
-                        </div>
-                    }
-                </div>
+                                    )}
+                                    </td>
+                                </tr>
+                            </table>
+                            :
+                            <div>
+                                <h1>No news avaible for this stock</h1>
+                            </div>
+                        }
+                    </div>
                 </div>
                 {/* <table class="newstable">
                         <tr>

@@ -3,7 +3,7 @@
   height: 60px;
   width: 600px;
   border-radius: 15px;
-  margin: 30px 55px 5px 55px;
+  margin: 30px 55px 15px 55px;
   font-size: 16px;
   border: solid 2px black;
   
@@ -35,9 +35,9 @@
 }
 
 .tabladesplegable{
-  position: absolute;
+  /* position: absolute;
   z-index: 10;
-  left: 33.5%;
+  left: 33.5%; */
 
 }
 
