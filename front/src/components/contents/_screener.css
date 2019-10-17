@@ -1,9 +1,48 @@
-input{
-color:black;
-height: 50px;
-width: 400px;
-border-radius: 15px;
-margin: 20px;
-font-size: 16px;
+.inputscreener {
+  color: black;
+  height: 60px;
+  width: 600px;
+  border-radius: 15px;
+  margin: 55px;
+  font-size: 16px;
+  border: solid 2px black;
+  
+}
 
+::placeholder {
+  font-size: 30px;
+  font-weight: bold;
+  color: #23252a;
+  align-content: center;
+}
+
+.inputscreener:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.screenertable {
+  margin: auto;
+  border: line px black;
+  width: 600px;
+}
+
+.namecompany {
+}
+
+.symbolcompany {
+float: right;}
+
+.trscreener{
+display: flex;
+justify-content: space-between
+}
+
+Link{
+    width: 100%;
+}
+
+.inputdiv{
+text-align: center;
 }

@@ -24,7 +24,7 @@ export default class Watchlist extends Component {
             .get(`https://financialmodellingprep.com/api/v3/company/profile/${stocks}`
             )
             .then(response => {
-console.log(response.data)
+                console.log(response.data)
                 this.setState({
                     ...this.state,
                     name: response.data.companyProfiles
@@ -53,8 +53,8 @@ console.log(response.data)
         // console.log(newData)
 
         // console.log(newDataSeries.data)
-console.log(this.state.name)
-        let newArr = this.state.name.map(el=> Object.keys(el.profile).map((elm,idx)=>({[elm]:Object.values(el.profile)[idx]})))
+        console.log(this.state.name)
+        let newArr = this.state.name.map(el => Object.keys(el.profile).map((elm, idx) => ({ [elm]: Object.values(el.profile)[idx] })))
         console.log(newArr)
         return (
 
@@ -62,27 +62,28 @@ console.log(this.state.name)
                 <h3>Watchlist</h3>
 
                 <table class="watchlisttable">
-                    <tr>
 
-                        {Array.isArray(newArr)?newArr.map(arr=>arr.map(el=>
-                        
+                    {Array.isArray(newArr) ? newArr.map(arr => arr.map(el =>
+
                         <div>
+                            <tr>
+                                <td> <img src={el.image}></img></td>
+                                <td>{el.price}</td>
+                                <td>{el.changesPercentage}</td>
+                            </tr>
+                        </div>
+                    )) : null}
 
-                        <tr>{el.price}</tr>
-                        <img src={el.image}></img>
-                            </div>
-                        )):null}
-                        {Array.isArray(this.state.stocks) ? <td>{this.state.stocks.map(data => {
-                            return (
-                                <div>
-                                    <Link to={`stockdetail/${data}`}>  <p>{data}</p></Link>
-                                </div>
-                            );
-                        })}</td> : null}
-                    </tr>
                 </table>
 
 
+                {Array.isArray(this.state.stocks) ? <td>{this.state.stocks.map(data => {
+                    return (
+                        <div>
+                            <Link to={`stockdetail/${data}`}>  <p>{data}</p></Link>
+                        </div>
+                    );
+                })}</td> : null}
             </div>
         )
     }

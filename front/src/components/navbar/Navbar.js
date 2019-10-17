@@ -39,6 +39,7 @@ class Navbar extends Component {
             <li>
               <Link class="links" to="/forexpanel">Forexpanel</Link>
             </li>
+            
           </ul>
 
 

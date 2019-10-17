@@ -9,8 +9,8 @@ import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import Screener from "./components//contents/Screener";
-import Stockdetail from  "./components/contents/stockdetail"
-import News from  "./components/contents/news"
+import Stockdetail from "./components/contents/stockdetail"
+import News from "./components/contents/news"
 import Tv from "./components/contents/Tv"
 import Chart from "./components/contents/chart"
 import Home from "./components/contents/home"
@@ -39,8 +39,8 @@ class App extends Component {
     super(props);
     //arrancamos el estado con un valor de loggedInUser con nada (luego lo vamos a reemplazar con el valor real)
     this.state = {
-      loggedInUser: null 
-    
+      loggedInUser: null
+
     };
     this.service = new AuthService();
 
@@ -74,7 +74,7 @@ class App extends Component {
         });
       });
   }
-  
+
 
 
   render() {
@@ -83,18 +83,23 @@ class App extends Component {
       //en este caso mostramos los contenidos ya que hay usuario
       return (
         <React.Fragment>
-<Redirect/>
+          <Redirect />
           <div className="App">
             <header className="App-header">
               <Tickertape></Tickertape>
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+              <div class="logoimage">
+
+                <img src="https://i.ibb.co/xHhRv57/Logo-Makr-3-X4c-ID.png" width="200" height="141px" margin-top="10px" />
+              </div>
               <Switch>
-               
+
                 <Route exact path="/Screener" render={() => <Screener getUser={this.getUser} />} />
                 <Route exact path="/stockdetail/:companyID" render={(props) => {
-                  return <Stockdetail companyID={props.match.params.companyID}  getUser={this.getUser} />}}
-                   />
-                        <Route exact path="/tv" render={() => <Tv getUser={this.getUser} />} />
+                  return <Stockdetail companyID={props.match.params.companyID} getUser={this.getUser} />
+                }}
+                />
+                <Route exact path="/tv" render={() => <Tv getUser={this.getUser} />} />
                 <Route exact path="/chart" render={() => <Chart getUser={this.getUser} />} />
                 <Route exact path="/news" render={() => <News getUser={this.getUser} />} />
                 <Route exact path="/home" render={() => <Home getUser={this.getUser} />} />
@@ -120,20 +125,25 @@ class App extends Component {
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
         <React.Fragment>
-          <Redirect  />
-        
+          <Redirect />
+
           <div className="App">
             <header className="App-header">
-            <Tickertape></Tickertape>
+              <Tickertape></Tickertape>
 
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+              <div class="logoimage">
+
+                <img src="https://i.ibb.co/xHhRv57/Logo-Makr-3-X4c-ID.png" width="200" height="141px" margin-top="10px" />
+              </div>
               <Switch>
                 <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
                 <Route exact path="/login" render={() => <Login getUser={this.getUser} />} />
                 <Route exact path="/Screener" render={() => <Screener getUser={this.getUser} />} />
                 <Route exact path="/stockdetail/:companyID" render={(props) => {
-                  return <Stockdetail companyID={props.match.params.companyID} getUser={this.getUser} />}}
-                   />
+                  return <Stockdetail companyID={props.match.params.companyID} getUser={this.getUser} />
+                }}
+                />
 
                 <Route exact path="/tv" render={() => <Tv getUser={this.getUser} />} />
                 <Route exact path="/chart" render={() => <Chart getUser={this.getUser} />} />

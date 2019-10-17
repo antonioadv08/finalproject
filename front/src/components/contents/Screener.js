@@ -51,17 +51,16 @@ export default class Screener extends Component {
             <div>
                 {Array.isArray(this.state.name) ?
                     <div>
-                        <div class="input">
-                            <label htmlFor="search">Search</label>
+                        <div class="inputdiv">
                             <input
+                                class="inputscreener"
                                 placeholder="Search by ticker or company name..."
                                 type="text"
                                 name="search"
-                                size="25px"
                                 id="search"
                                 value={this.state.search}
                                 onChange={this.handleSearch}
-                                />
+                            />
 
                         </div>
 
@@ -69,14 +68,19 @@ export default class Screener extends Component {
                         {this.state.name.map(el => {
 
                             return (
-                                <div>
-                                    <Link to={`stockdetail/${el["1. symbol"]}`}>  <p>{el["2. name"]}</p></Link>
-                                </div>
-                            );
+                                <table className="screenertable">
+                                        <tr >
+                                        <Link className="linkscreener" to={`stockdetail/${el["1. symbol"]}`}>
+                                            <td class="namecompany">{el["2. name"]}</td>
+                                            <td class="symbolcompany">{el["1. symbol"]}</td>
+
+                                        </Link>
+                                        </tr>
+                                </table>);
                         })}</div> :
-                    <div class="input">
-                        <label htmlFor="search">Search</label>
+                    <div >
                         <input
+                            class="inputscreener"
                             placeholder="Search by ticker or company name..."
                             type="text"
                             name="search"

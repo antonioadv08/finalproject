@@ -10,10 +10,38 @@ export default class Tickertape extends Component {
         const script = document.createElement('script');
         script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js'
         script.async = true;
-        script.innerHTML = /* JSON-ENCODED SETTINGS STRING FROM EMBED CODE */
+        script.innerHTML = {
+            "symbols": [
+              {
+                "title": "S&P 500",
+                "proName": "OANDA:SPX500USD"
+              },
+              {
+                "title": "Nasdaq 100",
+                "proName": "OANDA:NAS100USD"
+              },
+              {
+                "title": "EUR/USD",
+                "proName": "FX_IDC:EURUSD"
+              },
+              {
+                "title": "BTC/USD",
+                "proName": "BITSTAMP:BTCUSD"
+              },
+              {
+                "title": "ETH/USD",
+                "proName": "BITSTAMP:ETHUSD"
+              }
+            ],
+            "colorTheme": "light",
+            "isTransparent": false,
+            "displayMode": "compact",
+            "locale": "es"
+          }
+        /* JSON-ENCODED SETTINGS STRING FROM EMBED CODE */
         this._ref.current.appendChild(script);
     }
-    render() {
+    render() {  
         return(
         <div class="tradingview-widget-container" ref={this._ref}>
             <div class="tradingview-widget-container__widget"></div>

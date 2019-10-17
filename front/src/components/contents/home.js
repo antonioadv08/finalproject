@@ -58,18 +58,19 @@ export default class home extends Component {
     }
 
     render() {
-
+        console.log(this.state.name)
         return (
-            <div>
+            <div class="daddiv">
                 <Screener></Screener>
 
-                {this.state.name.indexName}
-                <br />
-                {this.state.name.changes}
-                <br />
-
-                {this.state.name.price}
-
+                <table>
+                    <td>
+                        <tr>{this.state.name.indexName}</tr>
+                        <tr>STOCK MARKET INDEX</tr>
+                        <tr>INDEX VALUE: {this.state.name.price}</tr>
+                        <tr>{this.state.name.changes}%</tr>
+                    </td>
+                </table>
 
                 <div class="stockspanel">
                     <MostGainers></MostGainers>
@@ -106,7 +107,7 @@ export default class home extends Component {
                 <div class="seccionabajo">
                     <SectorsPerfomance></SectorsPerfomance>
                     <MostActive></MostActive>
-                        <Economiccalendar class="economiccalendar"></Economiccalendar>
+                    <Economiccalendar class="economiccalendar"></Economiccalendar>
                 </div>
             </div>
         )
