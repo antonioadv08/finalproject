@@ -80,7 +80,7 @@ export default class Stockdetail extends Component {
 
             .then(response => {
 
-                if (Object.entries(response.data).length < 3 && response.data.constructor === Object) { response = null } else { response = response.data.articles }
+                if (Object.entries(response.data).length === 0  && response.data.constructor === Object) { response = null } else { response = response.data.articles }
 
                 this.setState({
                     news: response
@@ -148,7 +148,7 @@ export default class Stockdetail extends Component {
                         <Chart data={this.state.name}></Chart>
                         :
                         <div>
-                            <h1>No news avaible for this stock</h1>
+                            <h1>No chart avaible for this stock</h1>
                         </div>
                     }
                 </div>
