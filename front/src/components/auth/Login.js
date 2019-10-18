@@ -47,8 +47,8 @@ class Login extends Component {
     <div class="log-form">
   <h2>Login to your account</h2>
   <form onSubmit={this.handleFormSubmit}>
-    <input type="text" name="username" title="username" placeholder="username" value={this.state.username} onChange={e => this.handleChange(e)} />
-    <input type="password" title="username" placeholder="password"  name="password" value={this.state.password} onChange={e => this.handleChange(e)}/>
+    <input autoComplete="off" type="text" name="username" title="username" placeholder="username" value={this.state.username} onChange={e => this.handleChange(e)} />
+    <input autoComplete="off" type="password" title="username" placeholder="password"  name="password" value={this.state.password} onChange={e => this.handleChange(e)}/>
     <input type="submit" class="btn" value="Login" />
 
   </form>

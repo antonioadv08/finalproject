@@ -1,5 +1,13 @@
-.newstable{
+.newstablenews{
     font-size: 15px;
-    background-color: aqua;
+    font-size: 15px;
+    display:block;
+    overflow:auto;
+    height:600px;
+    width:510px;
     
+    }
+
+    .divnews{
+        display: flex;
     }

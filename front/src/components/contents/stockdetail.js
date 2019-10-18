@@ -118,11 +118,11 @@ export default class Stockdetail extends Component {
                     {this.state.profile != null ?
                         <div class="stocksdetailscomponents">
                             <table>
-                                <tr><td></td><td>{this.state.profile.companyName}</td></tr>
-                                <img src={this.state.profile.image} alt=""></img>
+                                <tr><td><img src={this.state.profile.image} alt=""></img>
+                                </td><h1>{this.state.profile.companyName}</h1></tr>
 
                                 <tr class="tdleft"><td >CEO:</td><td class="tdright">{this.state.profile.ceo}</td></tr>
-                                <tr class="tdleft"><td >Price:</td><td class="tdright">{this.state.profile.price}  $</td></tr>
+                                <tr class="tdleft"><td >Stock price:</td><td class="tdright">{this.state.profile.price}  $</td></tr>
                                 <tr class="tdleft"><td >Market Cap:</td><td class="tdright">{this.state.profile.mktCap}  $</td></tr>
                                 <tr class="tdleft"><td >Last dividend:</td><td class="tdright">{this.state.profile.lastDiv}  $</td></tr>
                                 <tr class="tdleft"><td >Changes percentage:</td><td class="tdright">{this.state.profile.changesPercentage}</td></tr>
@@ -130,11 +130,11 @@ export default class Stockdetail extends Component {
                                 <tr class="tdleft"><td >Sector:</td><td class="tdright">{this.state.profile.sector}</td></tr>
                                 <tr class="tdleft"><td >Daily average volume:</td><td class="tdright">{this.state.profile.volAvg}</td></tr>
 
-                                <tr class="tdleft"><td>Web:</td></tr><td class="tdright"><a href={this.state.profile.website} target="_blank" rel="noopener noreferrer">{this.state.profile.website}</a></td>
+                                <tr class="tdleft"><td>Web:</td><td class="tdright"><a href={this.state.profile.website} target="_blank" rel="noopener noreferrer">{this.state.profile.website}</a></td></tr>
 
+                            <tr><button class="btnfollowstock" onClick={() => this.savecompanyID()} >Add to watchlist</button></tr>
                             </table>
-                            <button onClick={() => this.savecompanyID()} >Add to watchlist</button>
-                            
+
                         </div>
                         :
                         <div>

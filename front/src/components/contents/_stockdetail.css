@@ -2,6 +2,7 @@
   display: flex;
   background-color: rgba(239, 245, 237, 0.8);
   margin:12px 50px;
+  border-radius: 15px;
   
 }
 
@@ -47,6 +48,32 @@ height: 20px;
 
 }
 
+.btnfollowstock{
+  border-radius: 15px;
+  display: inline-block;
+  background: #1fb5bf;
+  border: 1px solid #1ba0a9;
+  padding: 0.5em 2em;
+  color: white;
+  margin-right: 0.5em;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  align-items: center
+
+}
+
+
+.btnfollowstock:hover {
+  background: #23cad5;
+}
+
+.btnfollowstock:active {
+  background: #1fb5bf;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.btnfollowstock:focus {
+  outline: none;
+}
 
 
 

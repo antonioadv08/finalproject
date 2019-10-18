@@ -39,9 +39,9 @@ class Navbar extends Component {
             <li>
               <Link class="links" to="/forexpanel">Forexpanel</Link>
             </li>
-            {/* <li>
-              <Link class="links" to="/twitter">twitter</Link>
-            </li> */}
+            <li>
+              <Link class="links" to="/news">News</Link>
+            </li>
             
           </ul>
 
@@ -68,9 +68,9 @@ class Navbar extends Component {
                <li>
               <Link class="links" to="/forexpanel">Forexpanel</Link>
             </li>
-            {/* <li>
-              <Link class="links" to="/twitter">twitter</Link>
-            </li> */}
+            <li>
+              <Link class="links" to="/news">News</Link>
+            </li>
             
             </ul>
           </nav>

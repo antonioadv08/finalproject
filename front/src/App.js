@@ -27,6 +27,7 @@ import Economiccalendar from "./components/contents/economiccalendar";
 import Forexpanel from "./components/contents/forexpanel";
 import Footer from "./components/contents/footer"
 import Twitter from "./components/contents/twitter";
+import Hotmap from "./components/contents/hotmap";
 
 
 
@@ -117,6 +118,7 @@ class App extends Component {
                 <Route exact path="/forexpanel" render={() => <Forexpanel getUser={this.getUser} />} />
                 <Route exact path="/" render={() => <Home getUser={this.getUser} />} />
                 <Route exact path="/twitter" render={() => <Twitter getUser={this.getUser} />} />
+                <Route exact path="/hotmap" render={() => <Hotmap getUser={this.getUser} />} />
 
               </Switch>
               <Footer></Footer>
@@ -164,6 +166,7 @@ class App extends Component {
                 <Route exact path="/forexpanel" render={() => <Forexpanel getUser={this.getUser} />} />
                 <Route exact path="/" render={() => <Home getUser={this.getUser} />} />
                 <Route exact path="/twitter" render={() => <Twitter getUser={this.getUser} />} />
+                <Route exact path="/hotmap" render={() => <Hotmap getUser={this.getUser} />} />
 
 
 

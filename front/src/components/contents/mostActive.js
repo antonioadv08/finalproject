@@ -34,9 +34,9 @@ export default class MostActive extends Component {
     render() {
         return (
             <div>
-                <h3>Most active</h3>
 
                 <table class="mostactivetable">
+                <h3>Most active</h3>
                     <tr>
                         <th>Ticker</th>
                         <th>Company name</th>

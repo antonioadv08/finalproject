@@ -8,6 +8,8 @@ import SectorsPerfomance from './sectorsPerfomance';
 import "./_home.css"
 import Tv from './Tv';
 import Economiccalendar from './economiccalendar';
+import Chart from "./chart"
+
 
 export default class home extends Component {
 
@@ -16,9 +18,24 @@ export default class home extends Component {
         this.state = {
             name: [],
             news: [],
+            homedata:[],
 
         };
     }
+
+    getHomechart = () => {
+        axios
+            .get(`https://financialmodellingprep.com/api/v3/historical-price-full/SPY`
+            )
+
+            .then(response => {
+
+
+                this.setState({
+                    homedata: response.data.historical
+                });
+            });
+    };
 
     getData = () => {
         axios
@@ -54,6 +71,7 @@ export default class home extends Component {
     componentDidMount() {
         this.getData();
         this.getNews();
+        this.getHomechart()
 
     }
 
@@ -71,33 +89,11 @@ export default class home extends Component {
                         <tr>{this.state.name.changes}%</tr>
                     </td>
                 </table>
-
-
-                        <table class="newstable">
-                            <tr>
-                                <th>News</th>
-
-                            </tr>
-                            <tr >
-                                <td>{this.state.news.map(data =>
-                                    <div class="insidenews">
-                                        <div>
-                                            <img src={data.urlToImage} width="170px" height="130px"></img>
-                                        </div>
-                                        <div class="titleanddescription">
-                                            <a href={data.url} target="_blank" rel="noopener noreferrer">
-                                                <h3 class="h3home">{data.title}</h3></a>
-                                            <p>{data.description}</p>
-                                        </div>
-
-                                    </div>
-                                )}
-                                </td>
-                            </tr>
-                        </table>
+                <Chart data={this.state.homedata}></Chart>
                 <div class="stockspanel">
                     <MostGainers></MostGainers>
                     <MostLosers></MostLosers>
+                    <MostActive></MostActive>
                     <div class="stockspaneldown">
 
 
@@ -107,8 +103,6 @@ export default class home extends Component {
                 {/* <Tv></Tv> */}
                 <div class="seccionabajo">
                     <SectorsPerfomance></SectorsPerfomance>
-                    <MostActive></MostActive>
-                    <Economiccalendar class="economiccalendar"></Economiccalendar>
                 </div>
             </div>
         )

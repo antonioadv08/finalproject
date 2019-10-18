@@ -53,7 +53,7 @@ class Signup extends Component {
   <h2>Login to your account</h2>
     <input type="text" title="username" placeholder="username" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
     <input type="password" title="username" placeholder="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)}/>
-    <button type="submit" class="btn">Login</button>
+    <button type="submit" class="btn">Signup</button>
     <a class="forgot" href="#">Forgot Username?</a>
   </form>
   <h1>{this.state.error ? 'Error' : ''}</h1>

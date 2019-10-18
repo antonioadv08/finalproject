@@ -1,23 +1,26 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import "./_news.css"
+import Twitter from './twitter';
 
 
-export default class Stockdetail extends Component {
+export default class News extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            news: []
+            news: [],
         };
     }
 
-    getData = (companyID) => {
+    getNews = () => {
+
         axios
-            .get(`https://api.unibit.ai/api/terminal?tickers=${companyID}&selectedFields=Sentiment,Title,Author,description,Source,Source%20Url,Published%20Time&apiname=news_by_sentiment&startDate=7/24/2019&endDate=7/29/2019&accessKey=${process.env.REACT_APP_UNIBIT_KEY}`
-            )
+            .get(`https://newsapi.org/v2/everything?language=en&q=stocks&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWSAPI_KEY}`)
+
             .then(response => {
+
                 this.setState({
-                    news: response.data[companyID]
+                    news: response.data.articles
                 });
 
 
@@ -27,20 +30,35 @@ export default class Stockdetail extends Component {
 
     componentDidMount() {
         // this.getData(this.props.companyID);
-        this.getData("AAPL");
+        this.getNews();
     }
 
     render() {
-        console.log(this.state.news)
         return (
-            <div>
-                <table calss="newstable" >
+            <div class="divnews">
+                <table class="newstablenews">
                     <tr>
-                        <td>{this.state.news.map(data => <a href={data["source url"]} target="_blank" rel="noopener noreferrer"><p>{data.title}</p></a>)}</td>
-                        <td> {this.state.news.map(data => <p>{data.description}</p>)}</td>
+                        <th>News</th>
 
-                        </tr>
-                        </table>
+                    </tr>
+                    <tr >
+                        <td>{this.state.news.map(data =>
+                            <div class="insidenews">
+                                <div>
+                                    <img src={data.urlToImage} width="170px" height="130px"></img>
+                                </div>
+                                <div class="titleanddescription">
+                                    <a href={data.url} target="_blank" rel="noopener noreferrer">
+                                        <h3 class="h3home">{data.title}</h3></a>
+                                    <p>{data.description}</p>
+                                </div>
+
+                            </div>
+                        )}
+                        </td>
+                    </tr>
+                </table>
+                <Twitter></Twitter>
             </div>
         )
     }
