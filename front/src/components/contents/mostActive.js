@@ -33,10 +33,10 @@ export default class MostActive extends Component {
 
     render() {
         return (
-            <div>
+            <div lass="mostactivetable">
 
-                <table class="mostactivetable">
-                    <tr class="titletable"> <h3>Most active</h3></tr>
+                <table c>
+                    <caption>Most active</caption>
                     <tr>
                         <th>Ticker</th>
                         <th>Company name</th>

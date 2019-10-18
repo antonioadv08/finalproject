@@ -1,4 +1,6 @@
 .watchlisttable{
     font-size: 15px;
     background-color: aqua;
+    display:flex;
+    border-radius: 15px;
 }

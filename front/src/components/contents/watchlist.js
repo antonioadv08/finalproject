@@ -73,17 +73,17 @@ export default class Watchlist extends Component {
                             </tr>
                         </div>
                     )) : null}
+                                {Array.isArray(this.state.stocks) ? <td>{this.state.stocks.map(data => {
+                                    return (
+                                        <div>
+                                            <Link to={`stockdetail/${data}`}>  <p>{data}</p></Link>
+                                        </div>
+                                    );
+                                })}</td> : null}
 
                 </table>
 
 
-                {Array.isArray(this.state.stocks) ? <td>{this.state.stocks.map(data => {
-                    return (
-                        <div>
-                            <Link to={`stockdetail/${data}`}>  <p>{data}</p></Link>
-                        </div>
-                    );
-                })}</td> : null}
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 
 // import ProjectList from './components/projects/ProjectList';
 import Navbar from "./components/navbar/Navbar";
@@ -58,6 +58,7 @@ class App extends Component {
   logout = () => {
     this.service.logout().then(() => {
       this.setState({ loggedInUser: null });
+      this.props.history.push('/home');
     });
   };
 
@@ -179,4 +180,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

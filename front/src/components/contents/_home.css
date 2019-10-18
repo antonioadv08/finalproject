@@ -25,6 +25,9 @@ margin-bottom: 80px;
 
 .divtableandchart{
     display: flex;
+    justify-content: space-around;
+    border-radius:15px;
+
 }
 
 .contenderdiv{

@@ -32,10 +32,10 @@ export default class MostLosers extends Component {
 
     render() {
         return (
-            <div>
+            <div class="mostloserstable">
 
                 <table class="mostloserstable">
-                <tr><h3>Most losers</h3></tr>
+                <caption>Most losers</caption>
                     <tr>
                         <th>Ticker</th>
                         <th>Company name</th>
