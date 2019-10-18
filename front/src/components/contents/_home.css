@@ -22,6 +22,19 @@ margin-bottom: 80px;
       
     
     }
+
+.divtableandchart{
+    display: flex;
+}
+
+.contenderdiv{
+    background-color: rgba(239, 245, 237, 0.8);
+    margin: 12px 50px;
+    border-radius: 15px;
+}
+
+
+
 .h3home{
 	text-decoration: none;
 	color:white;

@@ -49,12 +49,11 @@ class Signup extends Component {
 
 
 <div class="log-form">
+  <h2>Create your account</h2>
   <form onSubmit={this.handleFormSubmit}>
-  <h2>Login to your account</h2>
     <input type="text" title="username" placeholder="username" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>
     <input type="password" title="username" placeholder="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)}/>
-    <button type="submit" class="btn">Signup</button>
-    <a class="forgot" href="#">Forgot Username?</a>
+    <input type="submit" class="btn" value="Signup"/>
   </form>
   <h1>{this.state.error ? 'Error' : ''}</h1>
 

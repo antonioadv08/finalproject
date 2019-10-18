@@ -18,7 +18,7 @@ export default class home extends Component {
         this.state = {
             name: [],
             news: [],
-            homedata:[],
+            homedata: [],
 
         };
     }
@@ -80,29 +80,31 @@ export default class home extends Component {
         return (
             <div >
                 <Screener></Screener>
-
-                <table className="sp500table">
-                    <td>
-                        <tr><h1>{this.state.name.indexName}</h1></tr>
-                        <tr>STOCK MARKET INDEX</tr>
-                        <tr><p>INDEX VALUE: <h2>{this.state.name.price}</h2> points</p></tr>
-                        <tr>{this.state.name.changes}%</tr>
-                    </td>
-                </table>
-                <Chart data={this.state.homedata}></Chart>
-                <div class="stockspanel">
-                    <MostGainers></MostGainers>
-                    <MostLosers></MostLosers>
-                    <MostActive></MostActive>
-                    <div class="stockspaneldown">
-
-
+                <div class="contenderdiv">
+                    <div class="divtableandchart">
+                        <table className="sp500table">
+                            <td>
+                                <tr><h1>{this.state.name.indexName}</h1></tr>
+                                <tr>STOCK MARKET INDEX</tr>
+                                <tr><p>INDEX VALUE: <h2>{this.state.name.price}</h2> points</p></tr>
+                                <tr>{this.state.name.changes}%</tr>
+                            </td>
+                        </table>
+                        <Chart height="500px"   data={this.state.homedata}></Chart>
+                        <SectorsPerfomance></SectorsPerfomance>
                     </div>
-                </div>
+                    <div class="stockspanel">
+                        <MostGainers></MostGainers>
+                        <MostLosers></MostLosers>
+                        <MostActive></MostActive>
+                        <div class="stockspaneldown">
 
-                {/* <Tv></Tv> */}
-                <div class="seccionabajo">
-                    <SectorsPerfomance></SectorsPerfomance>
+
+                        </div>
+                    </div>
+
+                    {/* <Tv></Tv> */}
+                    
                 </div>
             </div>
         )

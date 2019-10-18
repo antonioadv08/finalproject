@@ -53,6 +53,7 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
   }
   @media (max-width: 40em) {
     .log-form {
@@ -65,6 +66,7 @@
       -o-transform: translate(0%, 0%);
       -ms-transform: translate(0%, 0%);
       transform: translate(0%, 0%);
+
     }
   }
   .log-form form {
@@ -77,7 +79,7 @@
     font-family: "open sans condensed";
     font-size: 1.35em;
     display: block;
-    background: #2a2a2a;
+    background: #23252A;
     width: 100%;
     text-transform: uppercase;
     padding: 0.75em 1em 0.75em 1.5em;
@@ -85,6 +87,8 @@
     border: 1px solid #1d1d1d;
     margin: 0;
     font-weight: 200;
+    border-radius: 11px 11px 0px 0px;
+
   }
   .log-form input {
     display: block;
