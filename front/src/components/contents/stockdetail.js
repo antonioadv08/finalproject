@@ -115,67 +115,72 @@ export default class Stockdetail extends Component {
                 <Screener></Screener>
 
                 <div class="distribution">
-                    {this.state.profile != null ?
-                        <div class="stocksdetailscomponents">
-                            <table>
-                                <tr><td><img src={this.state.profile.image} alt=""></img>
-                                </td><h1>{this.state.profile.companyName}</h1></tr>
+                    <div class="flex">
+                        {this.state.profile != null ?
+                            <div class="stocksdetailscomponents">
+                                <table>
+                                    <tr><td><img src={this.state.profile.image} alt=""></img>
+                                    </td><h1>{this.state.profile.companyName}</h1></tr>
 
-                                <tr class="tdleft"><td >CEO:</td><td class="tdright">{this.state.profile.ceo}</td></tr>
-                                <tr class="tdleft"><td >Stock price:</td><td class="tdright">{this.state.profile.price}  $</td></tr>
-                                <tr class="tdleft"><td >Market Cap:</td><td class="tdright">{this.state.profile.mktCap}  $</td></tr>
-                                <tr class="tdleft"><td >Last dividend:</td><td class="tdright">{this.state.profile.lastDiv}  $</td></tr>
-                                <tr class="tdleft"><td >Changes percentage:</td><td class="tdright">{this.state.profile.changesPercentage}</td></tr>
-                                <tr class="tdleft"><td >Description:</td><td class="tdright">{this.state.profile.description}</td></tr>
-                                <tr class="tdleft"><td >Sector:</td><td class="tdright">{this.state.profile.sector}</td></tr>
-                                <tr class="tdleft"><td >Daily average volume:</td><td class="tdright">{this.state.profile.volAvg}</td></tr>
+                                    <tr class="tdleft"><td >CEO:</td><td class="tdright">{this.state.profile.ceo}</td></tr>
+                                    <tr class="tdleft"><td >Stock price:</td><td class="tdright">{this.state.profile.price}  $</td></tr>
+                                    <tr class="tdleft"><td >Market Cap:</td><td class="tdright">{this.state.profile.mktCap}  $</td></tr>
+                                    <tr class="tdleft"><td >Last dividend:</td><td class="tdright">{this.state.profile.lastDiv}  $</td></tr>
+                                    <tr class="tdleft"><td >Changes percentage:</td><td class="tdright">{this.state.profile.changesPercentage}</td></tr>
+                                    <tr class="tdleft"><td >Description:</td><td class="tdright">{this.state.profile.description}</td></tr>
+                                    <tr class="tdleft"><td >Sector:</td><td class="tdright">{this.state.profile.sector}</td></tr>
+                                    <tr class="tdleft"><td >Daily average volume:</td><td class="tdright">{this.state.profile.volAvg}</td></tr>
 
-                                <tr class="tdleft"><td>Web:</td><td class="tdright"><a href={this.state.profile.website} target="_blank" rel="noopener noreferrer">{this.state.profile.website}</a></td></tr>
+                                    <tr class="tdleft"><td>Web:</td><td class="tdright"><a href={this.state.profile.website} target="_blank" rel="noopener noreferrer">{this.state.profile.website}</a></td></tr>
 
-                            <tr><button class="btnfollowstock" onClick={() => this.savecompanyID()} >Add to watchlist</button></tr>
-                            </table>
+                                    <tr></tr>
+                                </table>
 
-                        </div>
-                        :
-                        <div>
-                            <h1>No data avaible for this stock</h1>
-                        </div>
-                    }
-
-                    {this.state.name != null ?
-                        <Chart class="chartstockdetail" data={this.state.name}></Chart>
-                        :
-                        <div>
-                            <h1>No chart avaible for this stock</h1>
-                        </div>
-                    }
-                    <div class="stocksdetailscomponents">
-                        {this.state.news != null ?
-                            <table class="newstablestocksdetail">
-                                <tr>
-                                    <th>News</th>
-                                </tr>
-                                <tr >
-                                    <td>{this.state.news.map(data =>
-                                        <div class="insidenews">
-                                            <div>
-                                                <img src={data.urlToImage} width="170px" height="130px"></img>
-                                            </div>
-                                            <div class="titleanddescription">
-                                                <a href={data.url} target="_blank" rel="noopener noreferrer">
-                                                    <h2>{data.title}</h2></a>
-                                                <p>{data.description}</p>
-                                            </div>
-                                        </div>
-                                    )}
-                                    </td>
-                                </tr>
-                            </table>
+                            </div>
                             :
                             <div>
-                                <h1>No news avaible for this stock</h1>
+                                <h1>No data avaible for this stock</h1>
                             </div>
                         }
+
+                        {this.state.name != null ?
+                            <Chart class="chartstockdetail" data={this.state.name}></Chart>
+                            :
+                            <div>
+                                <h1>No chart avaible for this stock</h1>
+                            </div>
+                        }
+                        <div class="stocksdetailscomponents">
+                            {this.state.news != null ?
+                                <table class="newstablestocksdetail">
+                                    <tr>
+                                        <th>News</th>
+                                    </tr>
+                                    <tr >
+                                        <td>{this.state.news.map(data =>
+                                            <div class="insidenews">
+                                                <div>
+                                                    <img src={data.urlToImage} width="170px" height="130px"></img>
+                                                </div>
+                                                <div class="titleanddescription">
+                                                    <a href={data.url} target="_blank" rel="noopener noreferrer">
+                                                        <h2>{data.title}</h2></a>
+                                                    <p>{data.description}</p>
+                                                </div>
+                                            </div>
+                                        )}
+                                        </td>
+                                    </tr>
+                                </table>
+                                :
+                                <div>
+                                    <h1>No news avaible for this stock</h1>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="divbuton">
+                        <button class="btnfollowstock"  onClick={() => this.savecompanyID()} >Add to watchlist</button>
                     </div>
                 </div>
                 {/* <table class="newstable">
