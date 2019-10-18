@@ -9,8 +9,8 @@ export default class Twitter extends Component {
 <div className="selfCenter standardWidth">
 <TwitterTimelineEmbed
   sourceType="profile"
-  screenName="saurabhnemade"
-  options={{height: 400}}
+  screenName="realDonaldTrump"
+  options={{height: 600,width:600}}
 />
 </div>
 </div>

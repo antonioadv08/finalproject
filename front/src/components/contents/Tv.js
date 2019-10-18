@@ -7,7 +7,7 @@ export default class Tv extends Component {
     render() {
         return (
             <div>
-                <ReactPlayer url='https://www.youtube.com/watch?v=jL8uDJJBjMA' playing muted="yes" controls="yes" />               </div>
+                <ReactPlayer url='https://www.youtube.com/watch?v=zg_YUu2JzEA' playing muted="yes" controls="yes" />               </div>
         )
     }
 }

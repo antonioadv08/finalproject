@@ -1,13 +1,25 @@
-.newstablenews{
-    font-size: 15px;
-    font-size: 15px;
-    display:block;
-    overflow:auto;
-    height:600px;
-    width:510px;
-    
-    }
+.newstablenews {
+  font-size: 15px;
+  font-size: 15px;
+  display: block;
+  overflow: auto;
+  height: 600px;
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+}
 
-    .divnews{
-        display: flex;
-    }
+.divnews {
+  margin: 80px 150px;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(239, 245, 237, 0.8);
+}
+
+.tvdiv {
+  margin: 100px 40px 0px;
+}
+
+.newstablenews h3 {
+  color: blue;
+}

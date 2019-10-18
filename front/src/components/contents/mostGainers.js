@@ -34,7 +34,7 @@ export default class MostGainers extends Component {
         return (
             <div>
                 <table class="mostgainerstable">
-                <h3 > Most gainers</h3>
+             <tr> <h3 > Most gainers</h3></tr>
                     <tr>
                         <th>Ticker</th>
                         <th>Company name</th>

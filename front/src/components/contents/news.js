@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios";
 import "./_news.css"
 import Twitter from './twitter';
+import Tv from './Tv';
 
 
 export default class News extends Component {
@@ -35,30 +36,37 @@ export default class News extends Component {
 
     render() {
         return (
-            <div class="divnews">
-                <table class="newstablenews">
-                    <tr>
-                        <th>News</th>
 
-                    </tr>
-                    <tr >
-                        <td>{this.state.news.map(data =>
-                            <div class="insidenews">
-                                <div>
-                                    <img src={data.urlToImage} width="170px" height="130px"></img>
-                                </div>
-                                <div class="titleanddescription">
-                                    <a href={data.url} target="_blank" rel="noopener noreferrer">
-                                        <h3 class="h3home">{data.title}</h3></a>
-                                    <p>{data.description}</p>
-                                </div>
+            <div>
 
-                            </div>
-                        )}
-                        </td>
-                    </tr>
-                </table>
-                <Twitter></Twitter>
+                <div class="divnews">
+                    <table class="newstablenews">
+                        <tr>
+                            <th><h1>News</h1></th>
+
+                        </tr>
+                        <tr >
+                            <td>{this.state.news.map(data =>
+                                <div class="insidenews">
+                                    <div>
+                                        <img src={data.urlToImage} width="170px" height="130px"></img>
+                                    </div>
+                                    <div class="titleanddescription">
+                                        <a href={data.url} target="_blank" rel="noopener noreferrer">
+                                            <h3 class="h3home">{data.title}</h3></a>
+                                        <p>{data.description}</p>
+                                    </div>
+
+                                </div>
+                            )}
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="tvdiv">
+                        <Tv></Tv>
+                    </div>
+                    <Twitter></Twitter>
+                </div>
             </div>
         )
     }

@@ -36,7 +36,7 @@ export default class MostActive extends Component {
             <div>
 
                 <table class="mostactivetable">
-                <h3>Most active</h3>
+                    <tr class="titletable"> <h3>Most active</h3></tr>
                     <tr>
                         <th>Ticker</th>
                         <th>Company name</th>
@@ -51,7 +51,7 @@ export default class MostActive extends Component {
 
 
 
-{/* <Link to={`stockdetail/${data.ticker}`}>  <p>{data}</p></Link> */}
+                {/* <Link to={`stockdetail/${data.ticker}`}>  <p>{data}</p></Link> */}
 
 
             </div>
