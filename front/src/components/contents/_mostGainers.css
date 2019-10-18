@@ -1,5 +1,12 @@
-.mostgainerstable{
-font-size: 15px;
+.mostgainerstable {
+  font-size: 15px;
+}
 
+caption {
+  font-size: 30px;
+}
 
+a{
+    text-decoration:none;
+    color:black;
 }

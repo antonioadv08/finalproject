@@ -34,7 +34,7 @@ export default class SectorsPerfomance extends Component {
         return (
             <div>
                 <table class="sectorperfomancetable">
-                <h3>Sector perfomance</h3>
+                <caption>Sector perfomance</caption>
 
                     <tr>
                         <td>{this.state.name.map(data => <p>{data.sector}</p>)}</td>
