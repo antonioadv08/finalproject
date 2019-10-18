@@ -4,3 +4,9 @@
     display:flex;
     border-radius: 15px;
 }
+
+.titlewatchlist{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}

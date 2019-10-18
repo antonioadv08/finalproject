@@ -20,6 +20,7 @@ export default class Watchlist extends Component {
     }
 
     getData = (stocks) => {
+
         axios
             .get(`https://financialmodellingprep.com/api/v3/company/profile/${stocks}`
             )
@@ -59,27 +60,25 @@ export default class Watchlist extends Component {
         return (
 
             <div>
-                <h3>Watchlist</h3>
+                <h3 class="titlewatchlist">Watchlist</h3>
+
 
                 <table class="watchlisttable">
-
                     {Array.isArray(newArr) ? newArr.map(arr => arr.map(el =>
 
                         <div>
-                            <tr>
-                                <td> <img src={el.image}></img></td>
-                                <td>{el.price}</td>
-                                <td>{el.changesPercentage}</td>
-                            </tr>
+                            <p> <img src={el.image}></img></p>
+                            <p>{el.price}</p>
+                            <p>{el.changesPercentage}</p>
                         </div>
                     )) : null}
-                                {Array.isArray(this.state.stocks) ? <td>{this.state.stocks.map(data => {
-                                    return (
-                                        <div>
-                                            <Link to={`stockdetail/${data}`}>  <p>{data}</p></Link>
-                                        </div>
-                                    );
-                                })}</td> : null}
+                    {Array.isArray(this.state.stocks) ? <td>{this.state.stocks.map(data => {
+                        return (
+                            <div>
+                                <Link to={`stockdetail/${data}`}>  <p>{data}</p></Link>
+                            </div>
+                        );
+                    })}</td> : null}
 
                 </table>
 

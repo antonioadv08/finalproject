@@ -44,7 +44,7 @@ export default class MostLosers extends Component {
                     <tr>
                         <td>{this.state.name.map(data => <Link to={`stockdetail/${data.ticker}`}><p>{data.ticker}</p></Link>)}</td>
                         <td>{this.state.name.map(data => <Link to={`stockdetail/${data.ticker}`}><p>{data.companyName}</p></Link>)}</td>
-                        <td> {this.state.name.map(data => <p>{data.changesPercentage}</p>)}</td>
+                        <td class="loserprice"> {this.state.name.map(data => <p>{data.changesPercentage}</p>)}</td>
                     </tr>
                 </table>
 

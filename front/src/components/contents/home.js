@@ -85,9 +85,9 @@ export default class home extends Component {
                         <table className="sp500table">
                             <td>
                                 <tr><h1>{this.state.name.indexName}</h1></tr>
-                                <tr>STOCK MARKET INDEX</tr>
                                 <tr><p>INDEX VALUE: <h2>{this.state.name.price}</h2> points</p></tr>
-                                <tr>{this.state.name.changes}%</tr>
+                                <tr class="changue">change:</tr>
+                                <tr class="changue">{this.state.name.changes}%</tr>
                             </td>
                         </table>
                         <Chart height="500px"   data={this.state.homedata}></Chart>

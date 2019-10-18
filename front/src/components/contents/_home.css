@@ -24,6 +24,14 @@ justify-content: space-evenly;
     
     }
 
+
+    .changue{
+font-weight: bold;
+font-size: 20px;
+color:red
+
+    }
+
 .divtableandchart{
     display: flex;
     justify-content: space-around;
@@ -35,6 +43,7 @@ justify-content: space-evenly;
     background-color: rgba(239, 245, 237, 0.8);
     margin: 12px 50px;
     border-radius: 15px;
+    padding-top:30px
 }
 
 
