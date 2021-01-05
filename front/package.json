@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "apexcharts": "^3.8.6",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dotenv-cli": "^3.0.0",
     "lightweight-charts": "^1.1.0",
     "react": "^16.5.2",
